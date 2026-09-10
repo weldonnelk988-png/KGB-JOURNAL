@@ -26,7 +26,7 @@
       "sym": "USoil",
       "market": "Matières premières",
       "dir": "long",
-      "qty": 182.1,
+      "qty": 0.3,
       "entry": 81.694,
       "stop": 77.677,
       "tp": 93.45,
@@ -36,7 +36,8 @@
       "fees": 0,
       "strategy": "Retournement",
       "mood": "Confiant",
-      "notes": "cetait un trade que javais bien analyser"
+      "notes": "cetait un trade que javais bien analyser",
+      "qtyMode": "units"
     }
   ],
   "notes": []
