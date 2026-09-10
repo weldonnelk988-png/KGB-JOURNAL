@@ -1,27 +1,8 @@
 {
   "settings": {
-    "capital": 2935.38,
+    "capital": 2934.38,
     "symbol": "$"
   },
-  "trades": [
-    {
-      "id": "tmtvky6seyzy7x",
-      "sym": "USDCHF",
-      "market": "Forex",
-      "dir": "long",
-      "qty": 30000,
-      "qtyMode": "lots",
-      "entry": 0.80934,
-      "stop": 0.8058,
-      "tp": 0.82067,
-      "exit": 0.8058,
-      "entryAt": "2026-09-03T14:37",
-      "exitAt": "2026-09-03T14:42",
-      "fees": 25.59,
-      "strategy": "Breakout",
-      "mood": "Neutre",
-      "notes": ""
-    }
-  ],
+  "trades": [],
   "notes": []
 }
