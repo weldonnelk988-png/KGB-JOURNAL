@@ -38,6 +38,24 @@
       "mood": "Confiant",
       "notes": "cetait un trade que javais bien analyser",
       "qtyMode": "units"
+    },
+    {
+      "id": "tmtvknjfwlll6z",
+      "sym": "AUDUSD",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 26000,
+      "qtyMode": "lots",
+      "entry": 0.69463,
+      "stop": 0.6994,
+      "tp": 0.68345,
+      "exit": 0.6994,
+      "entryAt": "2026-08-02T14:33",
+      "exitAt": "2026-08-04T14:35",
+      "fees": 0,
+      "strategy": "Swing",
+      "mood": "Vengeur",
+      "notes": "j'avais une conviction inverifier"
     }
   ],
   "notes": []
