@@ -3,6 +3,25 @@
     "capital": 2934.38,
     "symbol": "$"
   },
-  "trades": [],
+  "trades": [
+    {
+      "id": "tmtvmrxo15ldcn",
+      "sym": "USDCHF",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 19000,
+      "qtyMode": "lots",
+      "entry": 0.81168,
+      "stop": 0.80565,
+      "tp": 0.825,
+      "exit": null,
+      "entryAt": "2026-09-10T15:22",
+      "exitAt": "",
+      "fees": 0,
+      "strategy": "Breakout",
+      "mood": "Confiant",
+      "notes": "C'est un trade que je surveille depuis un certain temps."
+    }
+  ],
   "notes": []
 }
