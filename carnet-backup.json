@@ -20,6 +20,23 @@
       "strategy": "Tendance",
       "mood": "FOMO",
       "notes": "Perso, je ne me suis pas vraiment appliqué sur ce trade, je l’ai exécuté en dehors de mon cadre habituel."
+    },
+    {
+      "id": "tmtvjb8p3vydf7",
+      "sym": "USoil",
+      "market": "Matières premières",
+      "dir": "long",
+      "qty": 30000,
+      "entry": 81.694,
+      "stop": 77.677,
+      "tp": 93.45,
+      "exit": 83.627,
+      "entryAt": "2026-07-29T13:54",
+      "exitAt": "2026-07-30T13:56",
+      "fees": 0,
+      "strategy": "Retournement",
+      "mood": "Confiant",
+      "notes": "cetait un trade que javais bien analyser"
     }
   ],
   "notes": []
