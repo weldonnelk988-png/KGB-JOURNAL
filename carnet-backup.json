@@ -1,7 +1,7 @@
 {
   "settings": {
     "capital": 25000,
-    "symbol": "€"
+    "symbol": "$"
   },
   "trades": [
     {
