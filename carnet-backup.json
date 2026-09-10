@@ -1,11 +1,11 @@
 {
   "settings": {
     "capital": 25000,
-    "symbol": "$"
+    "symbol": "€"
   },
   "trades": [
     {
-      "id": "tmtvghznchz9my",
+      "id": "tmtvi0vo1dpvxf",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -22,7 +22,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzndzskgc",
+      "id": "tmtvi0vo1ukqo0",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -39,7 +39,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzndcvm0m",
+      "id": "tmtvi0vo2rkxjl",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "long",
@@ -56,7 +56,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznddr4ui",
+      "id": "tmtvi0vo2t2xsj",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -73,7 +73,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznd2dv5h",
+      "id": "tmtvi0vo2ib9x7",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -90,7 +90,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznddytwy",
+      "id": "tmtvi0vo2p38pb",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "short",
@@ -107,7 +107,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzndfqqqt",
+      "id": "tmtvi0vo2alqpc",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "short",
@@ -124,7 +124,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznd9c8c8",
+      "id": "tmtvi0vo2omkqf",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -141,7 +141,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzndujh71",
+      "id": "tmtvi0vo2zq00a",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "long",
@@ -158,7 +158,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznde85t9",
+      "id": "tmtvi0vo2vhb9y",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "short",
@@ -175,7 +175,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznd0v76o",
+      "id": "tmtvi0vo2j0uk5",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -192,7 +192,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzndjrlnh",
+      "id": "tmtvi0vo2rzs3m",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "short",
@@ -209,7 +209,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznewvu5f",
+      "id": "tmtvi0vo2x4ggf",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -226,7 +226,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznep3m8o",
+      "id": "tmtvi0vo2kve3g",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "short",
@@ -243,7 +243,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznedxibr",
+      "id": "tmtvi0vo21d25k",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -260,7 +260,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznesap32",
+      "id": "tmtvi0vo21rpz1",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "short",
@@ -277,7 +277,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznewl5tr",
+      "id": "tmtvi0vo2skcxp",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -294,7 +294,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne6lek4",
+      "id": "tmtvi0vo27zyic",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "long",
@@ -311,7 +311,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznewo82q",
+      "id": "tmtvi0vo3avvc2",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "short",
@@ -328,7 +328,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznedhiey",
+      "id": "tmtvi0vo3agupt",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "short",
@@ -345,7 +345,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznem7593",
+      "id": "tmtvi0vo3a4cg1",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -362,7 +362,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne4h5uy",
+      "id": "tmtvi0vo3tjzl8",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -379,7 +379,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznexinjg",
+      "id": "tmtvi0vo3nsbd5",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -396,7 +396,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznerr5j0",
+      "id": "tmtvi0vo3ojyd9",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "short",
@@ -413,7 +413,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznei7dqq",
+      "id": "tmtvi0vo3c3lmr",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "short",
@@ -430,7 +430,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne6aldb",
+      "id": "tmtvi0vo3eh4o0",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "long",
@@ -447,7 +447,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznex0iwr",
+      "id": "tmtvi0vo38d7fk",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "short",
@@ -464,7 +464,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne78sh1",
+      "id": "tmtvi0vo3i5jkq",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "long",
@@ -481,7 +481,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznevsyb8",
+      "id": "tmtvi0vo3u6qmf",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "long",
@@ -498,7 +498,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznelk0hg",
+      "id": "tmtvi0vo3i3sz9",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -515,7 +515,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznen9plq",
+      "id": "tmtvi0vo32eeye",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -532,7 +532,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznem8gf6",
+      "id": "tmtvi0vo3zpwvm",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "short",
@@ -549,7 +549,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne4jkp0",
+      "id": "tmtvi0vo3iazsn",
       "sym": "GER40",
       "market": "Indices",
       "dir": "short",
@@ -566,7 +566,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne3x7o9",
+      "id": "tmtvi0vo3l8y3y",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -583,7 +583,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzneh3swh",
+      "id": "tmtvi0vo3xzhy2",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -600,7 +600,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne4f39t",
+      "id": "tmtvi0vo3bnv3l",
       "sym": "GER40",
       "market": "Indices",
       "dir": "short",
@@ -617,7 +617,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznefca7f",
+      "id": "tmtvi0vo317ppu",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -634,7 +634,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzneqrnp2",
+      "id": "tmtvi0vo40yi4x",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -651,7 +651,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghzne26zsu",
+      "id": "tmtvi0vo4rw1ia",
       "sym": "GER40",
       "market": "Indices",
       "dir": "short",
@@ -668,7 +668,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfq3h6i",
+      "id": "tmtvi0vo486sax",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -685,7 +685,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfrqyyv",
+      "id": "tmtvi0vo48s7zg",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "short",
@@ -702,7 +702,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfc0lza",
+      "id": "tmtvi0vo4w8256",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -719,7 +719,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfuqexo",
+      "id": "tmtvi0vo4glbyd",
       "sym": "GER40",
       "market": "Indices",
       "dir": "short",
@@ -736,7 +736,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznffqq1q",
+      "id": "tmtvi0vo4wmzyf",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -753,7 +753,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfnf5az",
+      "id": "tmtvi0vo46tkc2",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "long",
@@ -770,7 +770,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfgodpd",
+      "id": "tmtvi0vo4ul7nw",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -787,7 +787,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf43cy2",
+      "id": "tmtvi0vo46a2yu",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "long",
@@ -804,7 +804,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfq33rq",
+      "id": "tmtvi0vo41bmeh",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "long",
@@ -821,7 +821,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfz596r",
+      "id": "tmtvi0vo479u89",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -838,7 +838,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfcnxk6",
+      "id": "tmtvi0vo4i7sdd",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -855,7 +855,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfm8mih",
+      "id": "tmtvi0vo4qfqc0",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -872,7 +872,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfpmeaa",
+      "id": "tmtvi0vo58n3r2",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -889,7 +889,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf1hhnj",
+      "id": "tmtvi0vo5ri3uv",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "short",
@@ -906,7 +906,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfbx3r5",
+      "id": "tmtvi0vo5ymt21",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "long",
@@ -923,7 +923,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf8oues",
+      "id": "tmtvi0vo59xkn7",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "short",
@@ -940,7 +940,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznft8s6o",
+      "id": "tmtvi0vo52vh8v",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "long",
@@ -957,7 +957,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf1qmex",
+      "id": "tmtvi0vo51dstb",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -974,7 +974,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf9o1dd",
+      "id": "tmtvi0vo54m0fz",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -991,7 +991,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf7gezz",
+      "id": "tmtvi0vo5oedbw",
       "sym": "NAS100",
       "market": "Indices",
       "dir": "long",
@@ -1008,7 +1008,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfszjcy",
+      "id": "tmtvi0vo54ms4m",
       "sym": "EUR/USD",
       "market": "Forex",
       "dir": "short",
@@ -1025,7 +1025,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfqn9iw",
+      "id": "tmtvi0vo5vftzs",
       "sym": "GER40",
       "market": "Indices",
       "dir": "long",
@@ -1042,7 +1042,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfxt8z6",
+      "id": "tmtvi0vo5unutn",
       "sym": "GER40",
       "market": "Indices",
       "dir": "short",
@@ -1059,7 +1059,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfs6bph",
+      "id": "tmtvi0vo5t514e",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -1076,7 +1076,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfj141s",
+      "id": "tmtvi0vo5lek4i",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "short",
@@ -1093,7 +1093,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfs2hln",
+      "id": "tmtvi0vo544kif",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -1110,7 +1110,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf162ar",
+      "id": "tmtvi0vo5vtf37",
       "sym": "BTC/USD",
       "market": "Crypto",
       "dir": "short",
@@ -1127,7 +1127,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznf9v4kc",
+      "id": "tmtvi0vo55v4da",
       "sym": "AAPL",
       "market": "Actions",
       "dir": "short",
@@ -1144,7 +1144,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfstir7",
+      "id": "tmtvi0vo5up4b7",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "short",
@@ -1161,7 +1161,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfqtgvm",
+      "id": "tmtvi0vo598o1v",
       "sym": "XAU/USD",
       "market": "Matières premières",
       "dir": "long",
@@ -1178,7 +1178,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfsbi7l",
+      "id": "tmtvi0vo6saxpb",
       "sym": "TSLA",
       "market": "Actions",
       "dir": "long",
@@ -1195,7 +1195,7 @@
       "notes": ""
     },
     {
-      "id": "tmtvghznfcpbsm",
+      "id": "tmtvi0vo6jguo3",
       "sym": "USD/JPY",
       "market": "Forex",
       "dir": "long",
@@ -1214,7 +1214,7 @@
   ],
   "notes": [
     {
-      "id": "tmtvghzngst87g",
+      "id": "tmtvi0vo6c8jm0",
       "date": "2026-09-08",
       "mood": "Discipliné",
       "title": "Exécution propre sur NAS100",
@@ -1222,7 +1222,7 @@
       "lesson": "La régularité de taille protège la courbe plus que n’importe quel trade « exceptionnel »."
     },
     {
-      "id": "tmtvghzng8aa46",
+      "id": "tmtvi0vo602fq1",
       "date": "2026-09-05",
       "mood": "Impulsif",
       "title": "Entrée hors plan sur TSLA",
@@ -1230,7 +1230,7 @@
       "lesson": "Une entrée sans niveau = une monnaie jetée. FOMO coûte cher, toujours."
     },
     {
-      "id": "tmtvghzngwo0gr",
+      "id": "tmtvi0vo6fb8nr",
       "date": "2026-09-01",
       "mood": "Concentré",
       "title": "Journée sans trade",
@@ -1238,7 +1238,7 @@
       "lesson": "Ne pas trader est une position. Le capital préservé est du capital disponible."
     },
     {
-      "id": "tmtvghzngjay6n",
+      "id": "tmtvi0vo652brj",
       "date": "2026-08-25",
       "mood": "Vengeur",
       "title": "Deuxième entrée après une perte — erreur classique",
@@ -1246,7 +1246,7 @@
       "lesson": "Règle à ajouter au plan : après deux pertes consécutives, fin de session, point."
     },
     {
-      "id": "tmtvghzngwz8vo",
+      "id": "tmtvi0vo6m2qe1",
       "date": "2026-08-17",
       "mood": "Confiant",
       "title": "Bonne semaine sur le pullback en tendance",
@@ -1254,7 +1254,7 @@
       "lesson": "Les trades les plus faciles sont ceux alignés avec le flux — je note le contexte à chaque entrée."
     },
     {
-      "id": "tmtvghzng1z6qj",
+      "id": "tmtvi0vo6jyvrf",
       "date": "2026-08-03",
       "mood": "Fatigué",
       "title": "Trading en fin de journée à éviter",
