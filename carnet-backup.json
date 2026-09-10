@@ -9,7 +9,7 @@
       "sym": "AUDUSD",
       "market": "Forex",
       "dir": "short",
-      "qty": 0.25,
+      "qty": 25000,
       "entry": 0.69467,
       "stop": 0.69875,
       "tp": 0.68345,
