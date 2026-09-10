@@ -3,6 +3,24 @@
     "capital": 3066.17,
     "symbol": "$"
   },
-  "trades": [],
+  "trades": [
+    {
+      "id": "tmtvirlax9uukw",
+      "sym": "AUDUSD",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 0.25,
+      "entry": 0.69467,
+      "stop": 0.69875,
+      "tp": 0.68345,
+      "exit": 0.69875,
+      "entryAt": "2026-07-28T13:25",
+      "exitAt": "2026-07-29T13:41",
+      "fees": 0,
+      "strategy": "Tendance",
+      "mood": "FOMO",
+      "notes": "Perso, je ne me suis pas vraiment appliqué sur ce trade, je l’ai exécuté en dehors de mon cadre habituel."
+    }
+  ],
   "notes": []
 }
