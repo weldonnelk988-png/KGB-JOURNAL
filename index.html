@@ -110,6 +110,12 @@ main{max-width:1480px;margin:0 auto;padding:30px 26px 80px}
 .dash-grid{display:grid;grid-template-columns:1.45fr 1.05fr .85fr;gap:1px;background:var(--line);border:1px solid var(--line);border-top:none}
 .dash-grid>.panel{border:none}
 
+/* Classe d'actifs en R (tableau de bord) */
+.clr-row{display:grid;grid-template-columns:180px 1fr 170px;gap:14px;align-items:center;padding:10px 18px;border-bottom:1px solid var(--line)}
+.clr-row:last-child{border-bottom:none}
+.clr-row .lbl b{display:block;font-family:var(--mono);font-size:12.5px;font-weight:500}
+.clr-row .lbl small{display:block;font-size:9.5px;color:var(--faint);letter-spacing:.08em;text-transform:uppercase}
+
 /* Courbe de capital */
 #equityWrap{position:relative;padding:22px 14px 10px}
 #equityWrap svg{display:block}
@@ -288,6 +294,7 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
   .filters{grid-template-columns:1fr 1fr}
   .tl-item{grid-template-columns:1fr}
   .tl-date{border-right:none;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+  .clr-row{grid-template-columns:1fr;gap:6px}
 }
 </style>
 </head>
@@ -363,6 +370,11 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
         <div class="panel-head"><h2><i>04</i>Répartition</h2></div>
         <div id="mixPanel"></div>
       </div>
+    </div>
+
+    <div class="panel" style="margin-top:1px">
+      <div class="panel-head"><h2><i>05</i>Performance par classe d’actifs · R multiples</h2><div class="meta" id="metaClassR"></div></div>
+      <div id="byClassR"></div>
     </div>
   </section>
 
@@ -478,7 +490,13 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
       <div class="f-field"><label>Marché</label><select id="tMarket"><option>Forex</option><option>Crypto</option><option>Indices</option><option>Actions</option><option>Matières premières</option><option>Futures</option><option>Autre</option></select></div>
       <div class="f-field full"><label>Direction *</label>
         <div class="dir-toggle"><button type="button" id="dirLong" class="on-long">▲ LONG</button><button type="button" id="dirShort">▼ SHORT</button></div></div>
-      <div class="f-field"><label>Quantité / taille *</label><input id="tQty" type="number" step="any" min="0" placeholder="10000"></div>
+      <div class="f-field"><label>Taille *</label>
+        <div style="display:flex;gap:8px">
+          <input id="tQty" type="number" step="any" min="0" placeholder="0,25" style="flex:1">
+          <select id="tQtyMode" style="width:92px;flex:none"><option value="lots">lot(s)</option><option value="units">unité(s)</option></select>
+        </div>
+        <div class="mood-preview" id="qtyHint" style="display:none"><i></i><span></span></div>
+      </div>
       <div class="f-field"><label>Stratégie</label><input id="tStrategy" list="stratList" placeholder="Breakout">
         <datalist id="stratList"><option>Breakout</option><option>Pullback</option><option>Retournement</option><option>Range</option><option>Tendance</option><option>News</option><option>Scalping</option><option>Swing</option></datalist></div>
     </div>
@@ -551,6 +569,7 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
    Données en localStorage + sauvegarde cloud optionnelle
    vers un dépôt GitHub PRIVÉ via API (token saisi dans Réglages,
    stocké uniquement dans ce navigateur — jamais dans le code).
+   Saisie des tailles en LOTS (converties en unités à l'enregistrement).
    ================================================================ */
 
 /* ---------- Utilitaires ---------- */
@@ -568,8 +587,23 @@ const MOODS = {
   'FOMO':'#FF8A5C','Impulsif':'#FF6B6B','Vengeur':'#FF4D6D'
 };
 
+/* ---------- Conversion lots ↔ unités ---------- */
+const LOT_FACTORS = {
+  'Forex': 100000, 'Matières premières': 100, 'Indices': 1,
+  'Crypto': 1, 'Actions': 1, 'Futures': 1, 'Autre': 1
+};
+const SYMBOL_FACTORS = { 'XAU/USD': 100, 'XAG/USD': 5000 }; // priorité sur la classe
+function lotFactor(sym, market) {
+  if (SYMBOL_FACTORS[sym] != null) return SYMBOL_FACTORS[sym];
+  return LOT_FACTORS[market] || 1;
+}
+
 function money(n, { sign = false, dec = 2 } = {}) {
-  const abs = Math.abs(n).toLocaleString('fr-FR', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+  if (!isFinite(n)) return '—';
+  const a = Math.abs(n);
+  let d = dec;
+  if (a > 0 && a < Math.pow(10, -dec) / 2) d = dec + 2; // évite les « −0,00 » trompeurs
+  const abs = a.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
   const s = n < 0 ? '−' : (sign ? '+' : '');
   return s + abs + ' ' + S.settings.symbol;
 }
@@ -856,7 +890,42 @@ function renderDash() {
     `<div class="ds-row"><span>${l}</span><b class="${c}">${v}</b></div>`).join('');
 
   $('tbCapital').textContent = money(all.finalEq);
-  renderEquity(); renderCalendar(); renderRecent(); renderMix();
+  renderEquity(); renderCalendar(); renderRecent(); renderMix(); renderClassR();
+}
+
+/* ---------- Rendu : classes d'actifs en R ---------- */
+function renderClassR() {
+  const c = periodTrades().filter(t => calcR(t) != null);
+  const m = new Map();
+  for (const t of c) {
+    const k = t.market || 'Autre';
+    if (!m.has(k)) m.set(k, { key: k, rSum: 0, rN: 0, wins: 0, losses: 0, count: 0 });
+    const o = m.get(k); const r = calcR(t);
+    o.rSum += r; o.rN++; o.count++;
+    const p = calcPnl(t);
+    if (p > 0) o.wins++; else if (p < 0) o.losses++;
+  }
+  const arr = [...m.values()].sort((a, b) => b.rSum - a.rSum);
+  const totR = arr.reduce((s, o) => s + o.rSum, 0);
+  $('metaClassR').textContent = c.length + ' trades · total ' + (totR >= 0 ? '+' : '−') + Math.abs(totR).toFixed(1) + 'R · ' + periodLabel();
+  if (!arr.length) {
+    $('byClassR').innerHTML = '<div class="empty-state" style="border:none">Aucun trade avec stop défini sur la période — le R ne peut pas être calculé.</div>';
+    return;
+  }
+  const mx = Math.max(0.5, ...arr.map(o => Math.abs(o.rSum)));
+  $('byClassR').innerHTML = arr.map(o => {
+    const w = Math.abs(o.rSum) / mx * 49;
+    const bar = o.rSum >= 0
+      ? `<div class="half"><i style="width:${w}%;background:var(--pos)"></i></div><div class="mid"></div><div class="half n"></div>`
+      : `<div class="half n"></div><div class="mid"></div><div class="half"><i style="width:${w}%;background:var(--neg)"></i></div>`;
+    const wr = (o.wins + o.losses) ? pct(o.wins / (o.wins + o.losses) * 100, 0) : '—';
+    const avg = o.rSum / o.rN;
+    return `<div class="clr-row">
+      <div class="lbl"><b>${esc(o.key)}</b><small>${o.count} trade${o.count > 1 ? 's' : ''} · WR ${wr}</small></div>
+      <div class="splitbar">${bar}</div>
+      <div style="text-align:right;font-family:var(--mono);font-size:12px"><span class="${o.rSum >= 0 ? 'pos' : 'neg'}" style="font-weight:500">${o.rSum >= 0 ? '+' : '−'}${Math.abs(o.rSum).toFixed(1)}R</span><small style="display:block;font-size:9.5px;color:var(--faint)">moy. ${avg >= 0 ? '+' : '−'}${Math.abs(avg).toFixed(2)}R / trade</small></div>
+    </div>`;
+  }).join('');
 }
 
 function renderEquity() {
@@ -1029,12 +1098,13 @@ function renderTrades() {
   const l = filteredTrades();
   $('tradesBody').innerHTML = l.map(t => {
     const p = calcPnl(t), r = calcR(t), open = !isClosed(t);
+    const lf = lotFactor(t.sym.toUpperCase(), t.market);
     return `<tr>
       <td class="mono muted">${fmtDT(t.exitAt || t.entryAt)}</td>
       <td class="sym">${esc(t.sym)}<span class="cls">${esc(t.market || '')}</span></td>
       <td><span class="badge ${t.dir}">${t.dir === 'long' ? 'LONG' : 'SHORT'}</span></td>
       <td class="mono">${price(t.entry)} → ${open ? '<span class="faint">—</span>' : price(t.exit)}</td>
-      <td class="mono muted">${num(t.qty, 4)}</td>
+      <td class="mono muted">${lf > 1 ? num(t.qty / lf, 2) + '<span class="cls">' + num(t.qty, 2) + ' unités</span>' : num(t.qty, 4)}</td>
       <td class="mono">${r == null ? '<span class="faint">—</span>' : `<span class="${r >= 0 ? 'pos' : 'neg'}">${r >= 0 ? '+' : '−'}${Math.abs(r).toFixed(1)}R</span>`}</td>
       <td class="mono" style="font-weight:500">${open ? `<span class="badge open">EN COURS</span>` : `<span class="${p >= 0 ? 'pos' : 'neg'}">${money(p, { sign: true })}</span>`}</td>
       <td class="muted">${esc(t.strategy || '—')}</td>
@@ -1164,6 +1234,7 @@ function renderSettings() {
   $('cloudStatus').textContent = on
     ? (last ? 'Active — dernière : ' + new Date(+last).toLocaleString('fr-FR') : 'Active — en attente de la première sauvegarde')
     : 'Désactivée';
+  $('cloudFile').textContent = 'carnet-backup.json · dépôt ' + (c.owner ? '✓' : '✗') + ' · token ' + (localStorage.getItem(CLOUD_TOK) ? '✓' : '✗');
 }
 
 /* ---------- Sauvegarde cloud (dépôt GitHub privé) ---------- */
@@ -1185,6 +1256,15 @@ function b64e(str) {
 const b64d = s => new TextDecoder().decode(Uint8Array.from(atob(s), c => c.charCodeAt(0)));
 const cloudConfigured = () => { const c = cloudCfg(); return !!(c.owner && c.repo && localStorage.getItem(CLOUD_TOK)); };
 
+async function ghErr(r) {
+  let msg = '';
+  try { msg = (await r.json()).message || ''; } catch (e) {}
+  if (r.status === 401) return 'Token invalide ou expiré — régénérez-le (Settings → Developer settings → Fine-grained tokens).';
+  if (r.status === 403) return 'Accès refusé (403) : dans le token, cochez le dépôt carnet-backup ET passez Contents sur « Read and write ».' + (msg ? ' — ' + msg : '');
+  if (r.status === 404) return 'Introuvable (404) : vérifiez « pseudo/carnet-backup » et que CE dépôt est coché dans le token.';
+  return 'Erreur GitHub ' + r.status + (msg ? ' — ' + msg : '');
+}
+
 async function cloudPush(silent = false) {
   if (!cloudConfigured()) { if (!silent) toast('Renseignez le dépôt et le token dans Réglages.', 'err'); return; }
   if (cloudBusy) { cloudQueued = true; return; }
@@ -1193,7 +1273,7 @@ async function cloudPush(silent = false) {
     let sha;
     const g = await fetch(cloudApi(), { headers: ghHeaders() });
     if (g.status === 200) sha = (await g.json()).sha;
-    else if (g.status !== 404) throw new Error('GitHub ' + g.status);
+    else if (g.status !== 404) throw new Error(await ghErr(g));
     const r = await fetch(cloudApi(), {
       method: 'PUT', headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -1201,10 +1281,10 @@ async function cloudPush(silent = false) {
         content: b64e(JSON.stringify(S, null, 2)), sha
       })
     });
-    if (!r.ok) throw new Error('GitHub ' + r.status);
+    if (!r.ok) throw new Error(await ghErr(r));
     localStorage.setItem(CLOUD_LAST, Date.now());
     if (!silent) toast('Sauvegarde envoyée sur GitHub.');
-    renderSettings();
+    if (ui.view === 'settings') renderSettings();
   } catch (e) {
     if (!silent) toast('Échec de la sauvegarde : ' + e.message, 'err');
   } finally {
@@ -1221,7 +1301,7 @@ async function cloudPull() {
   try {
     const g = await fetch(cloudApi(), { headers: ghHeaders() });
     if (g.status === 404) return toast('Aucune sauvegarde trouvée sur GitHub.', 'err');
-    if (!g.ok) throw new Error('GitHub ' + g.status);
+    if (!g.ok) throw new Error(await ghErr(g));
     const d = JSON.parse(b64d((await g.json()).content));
     if (!Array.isArray(d.trades)) throw new Error('format invalide');
     confirmDialog('Restaurer depuis GitHub ?', `${d.trades.length} trades et ${(d.notes || []).length} notes remplaceront les données locales.`, () => {
@@ -1231,13 +1311,13 @@ async function cloudPull() {
   } catch (e) { toast('Échec : ' + e.message, 'err'); }
 }
 async function cloudTest() {
-  if (!cloudConfigured()) return toast('Renseignez le dépôt et le token dans Réglages.', 'err');
+  if (!cloudConfigured()) return toast('Dépôt ou token manquant — vérifiez les deux champs.', 'err');
+  const c = cloudCfg();
   try {
     const g = await fetch(cloudApi(), { headers: ghHeaders() });
-    if (g.status === 200) toast('Connexion OK — dernière sauvegarde : ' + new Date((await g.json()).commit.author.date).toLocaleString('fr-FR'));
-    else if (g.status === 404) toast('Connexion OK — première sauvegarde non encore créée.');
-    else if (g.status === 401) throw new Error('token invalide ou expiré');
-    else throw new Error('GitHub ' + g.status);
+    if (g.status === 200) toast('Connexion OK à ' + c.owner + '/' + c.repo + ' — sauvegarde existante trouvée.');
+    else if (g.status === 404) toast('Connexion OK à ' + c.owner + '/' + c.repo + ' — première sauvegarde non encore créée.');
+    else throw new Error(await ghErr(g));
   } catch (e) { toast('Échec : ' + e.message, 'err'); }
 }
 
@@ -1256,7 +1336,11 @@ function openTradeDrawer(trade, closing = false) {
   const t = trade || {};
   $('dTitle').textContent = trade ? 'Modifier le trade' : 'Nouveau trade';
   $('tSym').value = t.sym || ''; $('tMarket').value = t.market || 'Forex';
-  $('tQty').value = t.qty ?? ''; $('tStrategy').value = t.strategy || '';
+  const lfE = lotFactor((t.sym || '').toUpperCase(), t.market || 'Forex');
+  const qm = t.qtyMode || (t.qty != null ? 'units' : 'lots');
+  $('tQtyMode').value = qm;
+  $('tQty').value = t.qty == null ? '' : (qm === 'lots' && lfE > 1 ? t.qty / lfE : t.qty);
+  $('tStrategy').value = t.strategy || '';
   $('tEntryAt').value = t.entryAt || toLocalInput(new Date());
   $('tEntry').value = t.entry ?? ''; $('tStop').value = t.stop ?? '';
   $('tTP').value = t.tp ?? ''; $('tExitAt').value = t.exitAt || '';
@@ -1282,7 +1366,20 @@ function updateMoodPreview() {
   $('moodPreview').querySelector('i').style.background = c;
   $('moodPreview').querySelector('span').textContent = m;
 }
+function updateQtyHint() {
+  const el = $('qtyHint'); if (!el) return;
+  const f = lotFactor($('tSym').value.trim().toUpperCase(), $('tMarket').value);
+  const v = parseFloat($('tQty').value);
+  const mode = $('tQtyMode').value;
+  const base = f > 1 ? '1 lot = ' + num(f) + ' unités' : '1 lot = 1 unité';
+  el.style.display = 'flex';
+  el.querySelector('i').style.background = 'var(--accent)';
+  el.querySelector('span').textContent = !v || v <= 0 || isNaN(v) ? base
+    : mode === 'lots' ? base + ' → ' + num(v * f, 2) + ' unités'
+    : (f > 1 ? base + ' → ' + num(v / f, 4) + ' lot(s)' : base);
+}
 function updateCalc() {
+  updateQtyHint();
   const t = readForm();
   const risk = calcRisk(t), pnl = calcPnl(t), r = calcR(t);
   $('calcRisk').textContent = risk ? money(risk) : '—';
@@ -1295,8 +1392,13 @@ function updateCalc() {
 function readForm() {
   const v = id => $(id).value.trim();
   const nn = id => v(id) === '' ? null : parseFloat(v(id));
+  const mode = $('tQtyMode').value;
+  const f = lotFactor(v('tSym').toUpperCase(), v('tMarket'));
+  const q = nn('tQty');
   return {
-    sym: v('tSym'), market: v('tMarket'), dir: ui.formDir, qty: nn('tQty'),
+    sym: v('tSym'), market: v('tMarket'), dir: ui.formDir,
+    qty: q == null ? null : (mode === 'lots' ? q * f : q),
+    qtyMode: mode,
     entry: nn('tEntry'), stop: nn('tStop'), tp: nn('tTP'), exit: nn('tExit'),
     entryAt: v('tEntryAt'), exitAt: v('tExitAt'), fees: nn('tFees') || 0,
     strategy: v('tStrategy'), mood: v('tMood'), notes: v('tNotes')
@@ -1473,14 +1575,16 @@ document.querySelectorAll('#tradesHead th.sortable').forEach(th => th.addEventLi
   if (v > 0) { S.settings.capital = v; save(); toast('Capital initial mis à jour.'); renderTicker(); }
 });
  $('setSymbol').addEventListener('change', e => { S.settings.symbol = e.target.value; save(); renderAll(); toast('Devise mise à jour.'); });
- $('cloudRepo').addEventListener('change', e => {
-  const [owner, repo] = e.target.value.trim().split('/');
-  localStorage.setItem(CLOUD_CFG, JSON.stringify({ owner: owner || '', repo: repo || '' }));
-  toast('Dépôt enregistré.');
+function parseRepo(v) {
+  v = v.trim().replace(/^https?:\/\/(www\.)?github\.com\//i, '').replace(/\.git$/i, '').replace(/\/+$/, '');
+  const m = v.match(/^([A-Za-z0-9][\w.-]*)\/([A-Za-z0-9._-]+)/);
+  return m ? { owner: m[1], repo: m[2] } : { owner: '', repo: '' };
+}
+ $('cloudRepo').addEventListener('input', e => {
+  localStorage.setItem(CLOUD_CFG, JSON.stringify(parseRepo(e.target.value)));
 });
- $('cloudToken').addEventListener('change', e => {
+ $('cloudToken').addEventListener('input', e => {
   localStorage.setItem(CLOUD_TOK, e.target.value.trim());
-  toast('Token enregistré (stocké uniquement dans ce navigateur).');
 });
  $('importFile').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ''; });
 window.addEventListener('resize', debounce(() => { if (ui.view === 'dashboard') renderEquity(); }, 180));
