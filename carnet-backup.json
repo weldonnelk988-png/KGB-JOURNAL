@@ -9,7 +9,7 @@
       "sym": "USDCHF",
       "market": "Forex",
       "dir": "long",
-      "qty": 377.93219,
+      "qty": 0.19,
       "qtyMode": "units",
       "entry": 0.81168,
       "stop": 0.80565,
@@ -21,7 +21,8 @@
       "strategy": "Breakout",
       "mood": "Confiant",
       "notes": "C'est un trade que je surveille depuis un certain temps.",
-      "lotSize": 100000
+      "lotSize": 100000,
+      "amount": 306.76
     }
   ],
   "notes": []
