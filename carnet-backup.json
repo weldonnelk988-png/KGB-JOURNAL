@@ -9,7 +9,7 @@
       "sym": "USDCHF",
       "market": "Forex",
       "dir": "long",
-      "qty": 0.19,
+      "qty": 19000,
       "qtyMode": "units",
       "entry": 0.81168,
       "stop": 0.80565,
