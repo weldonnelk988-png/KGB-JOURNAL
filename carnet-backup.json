@@ -9,18 +9,19 @@
       "sym": "USDCHF",
       "market": "Forex",
       "dir": "long",
-      "qty": 19000,
-      "qtyMode": "lots",
+      "qty": 377.93219,
+      "qtyMode": "units",
       "entry": 0.81168,
       "stop": 0.80565,
       "tp": 0.825,
-      "exit": null,
+      "exit": 0.825,
       "entryAt": "2026-09-10T15:22",
-      "exitAt": "",
+      "exitAt": "2026-09-16T19:00",
       "fees": 0,
       "strategy": "Breakout",
       "mood": "Confiant",
-      "notes": "C'est un trade que je surveille depuis un certain temps."
+      "notes": "C'est un trade que je surveille depuis un certain temps.",
+      "lotSize": 100000
     }
   ],
   "notes": []
