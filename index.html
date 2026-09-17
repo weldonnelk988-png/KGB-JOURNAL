@@ -490,14 +490,11 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
       <div class="f-field"><label>Marché</label><select id="tMarket"><option>Forex</option><option>Crypto</option><option>Indices</option><option>Actions</option><option>Matières premières</option><option>Futures</option><option>Autre</option></select></div>
       <div class="f-field full"><label>Direction *</label>
         <div class="dir-toggle"><button type="button" id="dirLong" class="on-long">▲ LONG</button><button type="button" id="dirShort">▼ SHORT</button></div></div>
-      <div class="f-field"><label>Quantité (unités) *</label>
-        <input id="tQty" type="number" step="any" min="0" placeholder="Ex. 50000, 1.5, 0.25…">
+      <div class="f-field"><label>Quantité (unités)</label>
+        <input id="tQty" type="number" step="any" min="0" placeholder="Ex. 50000, 1.5, 0.25… (info perso)">
       </div>
       <div class="f-field"><label>Taille de lot <span class="faint" style="text-transform:none;letter-spacing:0">— info perso, indépendante</span></label>
         <input id="tLotSize" type="number" step="any" min="0" placeholder="Optionnel">
-      </div>
-      <div class="f-field"><label>Montant de la position <span class="faint" style="text-transform:none;letter-spacing:0">— info perso, indépendant</span></label>
-        <input id="tAmount" type="number" step="any" min="0" placeholder="Optionnel">
       </div>
       <div class="f-field"><label>Stratégie</label><input id="tStrategy" list="stratList" placeholder="Breakout">
         <datalist id="stratList"><option>Breakout</option><option>Pullback</option><option>Retournement</option><option>Range</option><option>Tendance</option><option>News</option><option>Scalping</option><option>Swing</option></datalist></div>
@@ -505,24 +502,26 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
     <div class="fs-title">Entrée</div>
     <div class="f-grid">
       <div class="f-field"><label>Date &amp; heure *</label><input id="tEntryAt" type="datetime-local"></div>
-      <div class="f-field"><label>Prix d'entrée *</label><input id="tEntry" type="number" step="any" placeholder="1,08450"></div>
-      <div class="f-field"><label>Stop loss</label><input id="tStop" type="number" step="any" placeholder="1,08200"></div>
-      <div class="f-field"><label>Take profit (objectif)</label><input id="tTP" type="number" step="any" placeholder="1,09000"></div>
+      <div class="f-field"><label>Prix d'entrée</label><input id="tEntry" type="number" step="any" placeholder="1,08450 (info perso)"></div>
+      <div class="f-field"><label>Stop loss</label><input id="tStop" type="number" step="any" placeholder="1,08200 (info perso)"></div>
+      <div class="f-field"><label>Take profit (objectif)</label><input id="tTP" type="number" step="any" placeholder="1,09000 (info perso)"></div>
     </div>
     <div class="fs-title">Sortie</div>
     <div class="f-grid">
       <div class="f-field"><label>Date &amp; heure de sortie</label><input id="tExitAt" type="datetime-local"></div>
-      <div class="f-field"><label>Prix de sortie</label><input id="tExit" type="number" step="any" placeholder="Laisser vide si en cours"></div>
+      <div class="f-field"><label>Prix de sortie</label><input id="tExit" type="number" step="any" placeholder="Laisser vide si en cours (info perso)"></div>
       <div class="f-field"><label>Frais / commissions</label><input id="tFees" type="number" step="any" placeholder="0"></div>
       <div class="f-field"><label>État d'esprit</label><select id="tMood"></select><div class="mood-preview" id="moodPreview"><i></i><span></span></div></div>
     </div>
+    <div class="fs-title">Risque &amp; résultat <span class="faint" style="text-transform:none;letter-spacing:0">— entièrement manuel, rien n'est recalculé</span></div>
+    <div class="f-grid">
+      <div class="f-field"><label>Risque (à stop)</label><input id="tRisk" type="number" step="any" min="0" placeholder="Montant risqué sur ce trade"></div>
+      <div class="f-field"><label>Ratio R:R visé</label><input id="tRRTarget" type="number" step="any" min="0" placeholder="Ex. 2 pour un objectif de 1:2"></div>
+      <div class="f-field"><label>R final (réalisé)</label><input id="tRFinal" type="number" step="any" placeholder="Ex. 1.8 ou -0.6"></div>
+      <div class="f-field"><label>P&amp;L si clôturé (montant final) *</label><input id="tAmount" type="number" step="any" placeholder="Le résultat net de ce trade"></div>
+    </div>
     <div class="fs-title">Analyse</div>
     <div class="f-field"><label>Notes — setup, exécution, ressentis</label><textarea id="tNotes" rows="4" placeholder="Contexte, plan de trade, respect du risque…"></textarea></div>
-    <div class="calcbox">
-      <div><span>Risque (à stop)</span><b id="calcRisk">—</b></div>
-      <div><span>Ratio R:R visé</span><b id="calcRR">—</b></div>
-      <div><span>P&amp;L si clôture</span><b id="calcPnl">—</b></div>
-    </div>
   </form>
   <div class="dr-foot">
     <button class="btn" data-action="close-drawer">Annuler</button>
@@ -663,19 +662,21 @@ function load() {
   } catch (e) { generateDemo(); save(); }
 }
 
-/* ---------- Moteur de calcul ---------- */
+/* ---------- Moteur de calcul ----------
+   Tout est saisi manuellement par l'utilisateur — aucune formule n'est
+   appliquée. calcPnl/calcRisk/calcR lisent simplement les valeurs que
+   l'utilisateur a entrées dans le formulaire (montant, risque, R final),
+   déjà calculées de son côté avant la prise de position. */
 const dirMul = t => t.dir === 'long' ? 1 : -1;
 function calcPnl(t) {
-  if (t.exit == null || t.exit === '') return null;
-  return (t.exit - t.entry) * t.qty * dirMul(t) - (t.fees || 0);
+  if (!isClosed(t)) return null;
+  return t.amount != null ? t.amount : null;
 }
 function calcRisk(t) {
-  if (t.stop == null || t.stop === '') return null;
-  return Math.abs(t.entry - t.stop) * t.qty;
+  return t.risk != null ? t.risk : null;
 }
 function calcR(t) {
-  const r = calcRisk(t), p = calcPnl(t);
-  return (r && r > 0 && p != null) ? p / r : null;
+  return t.rFinal != null ? t.rFinal : null;
 }
 const isClosed = t => t.exit != null && t.exit !== '';
 const closedTrades = () => S.trades.filter(isClosed).sort((a, b) => new Date(a.exitAt) - new Date(b.exitAt));
@@ -1337,15 +1338,16 @@ function openTradeDrawer(trade, closing = false) {
   $('tSym').value = t.sym || ''; $('tMarket').value = t.market || 'Forex';
   $('tQty').value = t.qty ?? '';
   $('tLotSize').value = t.lotSize ?? '';
-  $('tAmount').value = t.amount ?? '';
   $('tStrategy').value = t.strategy || '';
   $('tEntryAt').value = t.entryAt || toLocalInput(new Date());
   $('tEntry').value = t.entry ?? ''; $('tStop').value = t.stop ?? '';
   $('tTP').value = t.tp ?? ''; $('tExitAt').value = t.exitAt || '';
   $('tExit').value = t.exit ?? ''; $('tFees').value = t.fees ?? '';
   $('tMood').value = t.mood || ''; $('tNotes').value = t.notes || '';
+  $('tRisk').value = t.risk ?? ''; $('tRRTarget').value = t.rrTarget ?? '';
+  $('tRFinal').value = t.rFinal ?? ''; $('tAmount').value = t.amount ?? '';
   setDir(t.dir || 'long');
-  updateMoodPreview(); updateCalc();
+  updateMoodPreview();
   const hasExit = t.exit != null && t.exit !== '';
   $('dStatus').style.display = hasExit ? 'none' : 'inline-block';
   openDrawer('drawerTrade');
@@ -1364,34 +1366,24 @@ function updateMoodPreview() {
   $('moodPreview').querySelector('i').style.background = c;
   $('moodPreview').querySelector('span').textContent = m;
 }
-function updateCalc() {
-  const t = readForm();
-  const risk = calcRisk(t), pnl = calcPnl(t), r = calcR(t);
-  $('calcRisk').textContent = risk ? money(risk) : '—';
-  const rr = (risk > 0 && t.tp != null && t.tp !== '') ? Math.abs(t.tp - t.entry) / risk : null;
-  $('calcRR').textContent = rr ? '1 : ' + rr.toFixed(1) : '—';
-  const el = $('calcPnl');
-  if (pnl == null) { el.textContent = 'position ouverte'; el.className = 'muted'; }
-  else { el.textContent = money(pnl, { sign: true }) + (r != null ? `  (${r >= 0 ? '+' : '−'}${Math.abs(r).toFixed(1)}R)` : ''); el.className = pnl >= 0 ? 'pos' : 'neg'; }
-}
 function readForm() {
   const v = id => $(id).value.trim();
   const nn = id => v(id) === '' ? null : parseFloat(v(id));
   return {
     sym: v('tSym'), market: v('tMarket'), dir: ui.formDir,
-    qty: nn('tQty'), lotSize: nn('tLotSize'), amount: nn('tAmount'),
+    qty: nn('tQty'), lotSize: nn('tLotSize'),
     entry: nn('tEntry'), stop: nn('tStop'), tp: nn('tTP'), exit: nn('tExit'),
     entryAt: v('tEntryAt'), exitAt: v('tExitAt'), fees: nn('tFees') || 0,
-    strategy: v('tStrategy'), mood: v('tMood'), notes: v('tNotes')
+    strategy: v('tStrategy'), mood: v('tMood'), notes: v('tNotes'),
+    risk: nn('tRisk'), rrTarget: nn('tRRTarget'), rFinal: nn('tRFinal'), amount: nn('tAmount')
   };
 }
 function submitTrade() {
   const t = readForm();
   if (!t.sym) return toast('Le symbole est obligatoire.', 'err');
-  if (!t.qty || t.qty <= 0) return toast('La quantité doit être supérieure à 0.', 'err');
-  if (t.entry == null) return toast('Le prix d’entrée est obligatoire.', 'err');
   if (!t.entryAt) return toast('La date d’entrée est obligatoire.', 'err');
   if (t.exit != null && !t.exitAt) return toast('Renseignez la date de sortie d’un trade clôturé.', 'err');
+  if (t.exit != null && t.amount == null) return toast('Renseigne le P&L (montant final) pour un trade clôturé.', 'err');
   if (t.exit == null) t.exitAt = '';
   if (ui.editTrade) {
     const i = S.trades.findIndex(x => x.id === ui.editTrade);
@@ -1548,7 +1540,6 @@ document.querySelectorAll('#tradesHead th.sortable').forEach(th => th.addEventLi
  $('dirLong').addEventListener('click', () => setDir('long'));
  $('dirShort').addEventListener('click', () => setDir('short'));
  $('tMood').addEventListener('change', updateMoodPreview);
- $('tradeForm').addEventListener('input', updateCalc);
  $('tradeForm').addEventListener('submit', e => { e.preventDefault(); submitTrade(); });
  $('noteForm').addEventListener('submit', e => { e.preventDefault(); submitNote(); });
  $('setCapital').addEventListener('change', e => {
