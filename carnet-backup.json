@@ -26,6 +26,28 @@
       "risk": 121,
       "rrTarget": 2.21,
       "rFinal": 2.21
+    },
+    {
+      "id": "tmumzg3nnrfwmz",
+      "sym": "GBPAUD",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 39000,
+      "lotSize": 0.39,
+      "entry": 1.88805,
+      "stop": 1.88435,
+      "tp": 1.9,
+      "exit": 1.88435,
+      "entryAt": "2026-09-29T18:53",
+      "exitAt": "2026-09-29T04:31",
+      "fees": 0,
+      "strategy": "News",
+      "mood": "Impulsif",
+      "notes": "J'ai été trop impulsive sur le trade et je n'ai pas bien exécuté.",
+      "risk": 101.4,
+      "rrTarget": 3.23,
+      "rFinal": -1,
+      "amount": -101.4
     }
   ],
   "notes": [
