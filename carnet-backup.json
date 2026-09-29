@@ -48,6 +48,28 @@
       "rrTarget": 3.23,
       "rFinal": -1,
       "amount": -101.4
+    },
+    {
+      "id": "tmumzs3e6h8lnd",
+      "sym": "GBPAUD",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 33000,
+      "lotSize": 0.33,
+      "entry": 1.89,
+      "stop": 1.88576,
+      "tp": 1.9,
+      "exit": 1.89294,
+      "entryAt": "2026-09-29T19:01",
+      "exitAt": "2026-09-29T09:31",
+      "fees": 0,
+      "strategy": "News",
+      "mood": "Concentré",
+      "notes": "J'ai choisi de clôturer avant le CPI australien pour éviter une deuxième perte sèche.",
+      "risk": 97.66,
+      "rrTarget": 2.36,
+      "rFinal": 0.69,
+      "amount": 67.81
     }
   ],
   "notes": [
