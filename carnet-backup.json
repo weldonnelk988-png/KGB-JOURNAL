@@ -70,6 +70,28 @@
       "rrTarget": 2.36,
       "rFinal": 0.69,
       "amount": 67.81
+    },
+    {
+      "id": "tmupw3lsnd5f64",
+      "sym": "AUDUSD",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 44000,
+      "lotSize": 0.44,
+      "entry": 0.69704,
+      "stop": 0.69952,
+      "tp": 0.69096,
+      "exit": 0.69325,
+      "entryAt": "2026-09-30T06:39",
+      "exitAt": "2026-10-01T19:45",
+      "fees": 0,
+      "strategy": "Breakout",
+      "mood": "Discipliné",
+      "notes": "Je dois prendre l’habitude de décider comment je vais gérer le trade avant de l’exécuter, que ce soit de manière agressive ou patiente.",
+      "risk": 109.12,
+      "rrTarget": 2.45,
+      "rFinal": 0.93,
+      "amount": 96.26
     }
   ],
   "notes": [
