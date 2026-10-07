@@ -83,7 +83,7 @@
       "tp": 0.69096,
       "exit": 0.69325,
       "entryAt": "2026-09-30T06:39",
-      "exitAt": "2026-10-01T19:45",
+      "exitAt": "2026-10-01T11:50",
       "fees": 0,
       "strategy": "Breakout",
       "mood": "Discipliné",
@@ -92,6 +92,28 @@
       "rrTarget": 2.45,
       "rFinal": 1.53,
       "amount": 96.26
+    },
+    {
+      "id": "tmuyhw8sikf8cm",
+      "sym": "GBPCAD",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 18000,
+      "lotSize": 0.18,
+      "entry": 1.88694,
+      "stop": 1.88078,
+      "tp": 1.91,
+      "exit": 1.88078,
+      "entryAt": "2026-10-06T20:21",
+      "exitAt": "2026-10-07T10:08",
+      "fees": 0,
+      "strategy": "Tendance",
+      "mood": "Neutre",
+      "notes": "J'avais un biais fonda moins certains alors j'ai risquer 75% de mon RR Max",
+      "risk": 77.96,
+      "rrTarget": 3.74,
+      "rFinal": -1,
+      "amount": -77.96
     }
   ],
   "notes": [
