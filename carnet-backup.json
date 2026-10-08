@@ -114,6 +114,28 @@
       "rrTarget": 3.74,
       "rFinal": -1,
       "amount": -77.96
+    },
+    {
+      "id": "tmv06ibm2v5ln1",
+      "sym": "AUDUSD",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 30000,
+      "lotSize": 0.3,
+      "entry": 0.69613,
+      "stop": 0.69775,
+      "tp": 0.69095,
+      "exit": 0.6963,
+      "entryAt": "2026-10-07T20:21",
+      "exitAt": "2026-10-08T13:21",
+      "fees": 0,
+      "strategy": "Tendance",
+      "mood": "Confiant",
+      "notes": "Je n’étais pas assez présent sur les marchés pour sécuriser les profits en prenant des gains partiels.",
+      "risk": 48.6,
+      "rrTarget": 3.2,
+      "rFinal": 1.53,
+      "amount": -5.1
     }
   ],
   "notes": [
