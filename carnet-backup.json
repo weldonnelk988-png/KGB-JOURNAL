@@ -136,6 +136,28 @@
       "rrTarget": 3.2,
       "rFinal": 1.53,
       "amount": -5.1
+    },
+    {
+      "id": "tmvj94le0h4tb7",
+      "sym": "GBPJPY",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 18000,
+      "lotSize": 0.18,
+      "entry": 210.624,
+      "stop": 209.726,
+      "tp": 213,
+      "exit": 210.9,
+      "entryAt": "2026-10-19T01:32",
+      "exitAt": "2026-10-22T05:44",
+      "fees": 0,
+      "strategy": "Breakout",
+      "mood": "Confiant",
+      "notes": "J'ai respecté mon plan de trading, mais ma gestion des risques n'était pas optimale, ce qui aurait pu me rapporter davantage.",
+      "risk": 102.8,
+      "rrTarget": 2.65,
+      "rFinal": 0.29,
+      "amount": 31.56
     }
   ],
   "notes": [
