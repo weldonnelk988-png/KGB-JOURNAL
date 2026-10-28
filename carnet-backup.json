@@ -1,7 +1,14 @@
 {
   "settings": {
     "capital": 2934.38,
-    "symbol": "$"
+    "symbol": "$",
+    "currency": "USD",
+    "dailyLossPct": 1,
+    "weeklyLossPct": 3,
+    "monthlyTargetPct": 4,
+    "maxTradesDay": 3,
+    "riskPct": 1,
+    "specs": {}
   },
   "trades": [
     {
@@ -25,7 +32,8 @@
       "amount": 306.76,
       "risk": 121,
       "rrTarget": 2.21,
-      "rFinal": 2.21
+      "rFinal": 2.21,
+      "tags": []
     },
     {
       "id": "tmumzg3nnrfwmz",
@@ -47,7 +55,9 @@
       "risk": 101.4,
       "rrTarget": 3.23,
       "rFinal": -1,
-      "amount": -101.4
+      "amount": -101.4,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmumzs3e6h8lnd",
@@ -69,7 +79,9 @@
       "risk": 97.66,
       "rrTarget": 2.36,
       "rFinal": 0.69,
-      "amount": 67.81
+      "amount": 67.81,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmupw3lsnd5f64",
@@ -91,7 +103,9 @@
       "risk": 109.12,
       "rrTarget": 2.45,
       "rFinal": 1.53,
-      "amount": 96.26
+      "amount": 96.26,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmuyhw8sikf8cm",
@@ -113,7 +127,9 @@
       "risk": 77.96,
       "rrTarget": 3.74,
       "rFinal": -1,
-      "amount": -77.96
+      "amount": -77.96,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmv06ibm2v5ln1",
@@ -135,7 +151,9 @@
       "risk": 48.6,
       "rrTarget": 3.2,
       "rFinal": 1.53,
-      "amount": -5.1
+      "amount": -5.1,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmvj94le0h4tb7",
@@ -157,7 +175,9 @@
       "risk": 102.8,
       "rrTarget": 2.65,
       "rFinal": 0.29,
-      "amount": 31.56
+      "amount": 31.56,
+      "tags": [],
+      "qtyMode": "units"
     },
     {
       "id": "tmvsos2ob0436m",
@@ -179,7 +199,9 @@
       "risk": 51.22,
       "rrTarget": 3.85,
       "rFinal": null,
-      "amount": null
+      "amount": null,
+      "tags": [],
+      "qtyMode": "units"
     }
   ],
   "notes": [
