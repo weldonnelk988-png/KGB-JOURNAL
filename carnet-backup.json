@@ -158,6 +158,28 @@
       "rrTarget": 2.65,
       "rFinal": 0.29,
       "amount": 31.56
+    },
+    {
+      "id": "tmvsos2ob0436m",
+      "sym": "GBPJPY",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 11000,
+      "lotSize": 0.11,
+      "entry": 210.285,
+      "stop": 209.55,
+      "tp": 213.113,
+      "exit": null,
+      "entryAt": "2026-10-28T23:23",
+      "exitAt": "",
+      "fees": 0,
+      "strategy": "Breakout",
+      "mood": "Neutre",
+      "notes": "J'ai pris cette position à 50% de mon risque maximal; si la transaction évolue favorablement, j'ajouterai les 50% restants.",
+      "risk": 51.22,
+      "rrTarget": 3.85,
+      "rFinal": null,
+      "amount": null
     }
   ],
   "notes": [
