@@ -5,7 +5,7 @@
     "currency": "USD",
     "dailyLossPct": 1,
     "weeklyLossPct": 2,
-    "monthlyTargetPct": 3,
+    "monthlyTargetPct": 5,
     "maxTradesDay": 2,
     "riskPct": 1,
     "specs": {},
