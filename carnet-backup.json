@@ -4,7 +4,7 @@
     "symbol": "$",
     "currency": "USD",
     "dailyLossPct": 1,
-    "weeklyLossPct": 3,
+    "weeklyLossPct": 2,
     "monthlyTargetPct": 3,
     "maxTradesDay": 2,
     "riskPct": 1,
