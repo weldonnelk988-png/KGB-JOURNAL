@@ -212,9 +212,9 @@
       "entry": 210.285,
       "stop": 209.55,
       "tp": 213.113,
-      "exit": null,
+      "exit": 212.938,
       "entryAt": "2026-10-28T23:23",
-      "exitAt": "",
+      "exitAt": "2026-11-03T21:02",
       "fees": 0,
       "strategy": "Breakout",
       "mood": "Neutre",
@@ -224,7 +224,8 @@
       "rFinal": null,
       "amount": null,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "pnlOverride": 138.99
     }
   ],
   "notes": [
