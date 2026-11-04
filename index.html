@@ -224,6 +224,33 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
 .empty-state{border:1px dashed var(--line2);padding:60px 24px;text-align:center;color:var(--muted)}
 .empty-state .btn{margin-top:16px}
 
+/* ---------- v4 : bilan hebdo, MAE/MFE, Edge Finder ---------- */
+.seg.inline{margin:0;padding:0;align-self:auto}
+.wk-nav{display:flex;align-items:center;gap:6px}
+.wk-nav b{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text);min-width:200px;text-align:center}
+.wk-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:18px}
+.wk-kpi{background:var(--surface2);padding:12px 14px}
+.wk-kpi>span{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
+.wk-kpi b{font-family:var(--mono);font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.wk-kpi small{display:block;font-size:10.5px;color:var(--muted);margin-top:3px;font-family:var(--mono)}
+.wk-obs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.wk-obs label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+.wk-obs textarea{min-height:96px;font-size:12.5px}
+.wk-actions{display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap}
+.wk-actions .faint{font-family:var(--mono);font-size:10.5px}
+.mfe-body{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.mfe-sub{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.mfe-note{margin-top:16px;padding:12px 14px;border:1px solid var(--line);background:var(--surface2);font-size:12.5px;color:var(--muted);line-height:1.65}
+.mfe-note b{color:var(--text);font-weight:500}
+.ef-item{display:flex;gap:14px;align-items:flex-start;padding:13px 16px;border:1px solid var(--line);background:var(--surface2);margin-bottom:8px;border-left:3px solid var(--faint)}
+.ef-item.neg{border-left-color:var(--neg)}.ef-item.pos{border-left-color:var(--pos)}.ef-item.info{border-left-color:var(--accent)}
+.ef-item b{font-size:13px;font-weight:600;display:block}
+.ef-item p{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.55}
+.ef-item p b{display:inline;font-size:12.5px}
+.ef-n{margin-left:auto;flex:none;font-family:var(--mono);font-size:10px;color:var(--faint);letter-spacing:.06em;text-align:right;line-height:1.8}
+.ef-n .weak{color:var(--accent);display:block}
+@media(max-width:980px){.wk-kpis{grid-template-columns:repeat(2,1fr)}.wk-obs{grid-template-columns:1fr}.mfe-body{grid-template-columns:1fr}.wk-nav b{min-width:0}}
+
 /* ---------- Réglages ---------- */
 .set-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
 .set-grid .panel{border:none}
@@ -312,6 +339,45 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
   .calcbox{grid-template-columns:1fr 1fr}
 }
 .pnl-m{font-family:var(--mono);font-size:9px;font-weight:400;color:var(--faint);border:1px solid var(--line2);border-radius:3px;padding:1px 4px;margin-left:7px;letter-spacing:.08em;vertical-align:1px}
+
+/* ---------- v5 : clôtures partielles & RR théorique vs réalisé ---------- */
+.p-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:12px 0 4px}
+.p-actions .faint{font-family:var(--mono);font-size:10px;line-height:1.6;text-align:right}
+.p-row{border:1px solid var(--line);background:var(--surface2);padding:12px;margin-bottom:10px}
+.p-grid{display:grid;grid-template-columns:1.3fr .95fr .95fr;gap:10px}
+.p-grid2{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-top:10px}
+.p-grid2 .ibtn{margin-bottom:3px}
+.p-info span b{color:var(--text);font-weight:500}
+.p-split{border:1px solid var(--line);background:var(--surface);padding:12px 14px;margin:12px 0 2px}
+.p-split-lbl{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;flex-wrap:wrap}
+.p-split-bar{display:flex;height:10px;background:var(--input);overflow:hidden}
+.p-split-bar i{transition:width .4s}
+.p-split-bar .c{background:var(--accent)}
+.p-split-bar .r{background:#2B323C}
+.p-warn{margin-top:9px;font-family:var(--mono);font-size:10.5px;color:var(--neg);line-height:1.6}
+.rr-init{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:4px 0 16px}
+.rr-init>div{background:var(--surface2);padding:10px 12px}
+.rr-init span{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
+.rr-init b{font-family:var(--mono);font-size:13px;font-weight:500;font-variant-numeric:tabular-nums}
+.rr-bars{margin:0 0 14px}
+.rr-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rr-bar-row .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);width:86px;flex:none}
+.rr-bar{flex:1;height:14px;background:var(--input);position:relative}
+.rr-bar i{position:absolute;top:0;bottom:0;left:0;transition:width .5s}
+.rr-bar .mk{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--text);opacity:.8}
+.rr-bar-row>b{font-family:var(--mono);font-size:12px;width:78px;text-align:right;flex:none;font-weight:500}
+.rr-legend{font-family:var(--mono);font-size:9.5px;color:var(--faint);margin:-2px 0 12px 96px}
+.rr-kvs{border-top:1px solid var(--line);margin-bottom:2px}
+.rr-stats{display:grid;grid-template-columns:1fr 1.15fr;gap:0}
+.rr-stats>.kv-list{border-right:1px solid var(--line)}
+.rr-stats-r{padding:14px 18px}
+.rr-table-wrap{overflow-x:auto;padding:4px 18px 8px}
+.rr-table{min-width:760px;width:100%}
+.rr-table td,.rr-table th{font-size:12px;white-space:nowrap}
+.rr-note{padding:10px 18px 16px;font-size:12px;color:var(--muted);line-height:1.65}
+.rr-note b{color:var(--text);font-weight:500}
+@media(max-width:980px){.rr-stats{grid-template-columns:1fr}.rr-stats>.kv-list{border-right:none;border-bottom:1px solid var(--line)}}
+@media(max-width:560px){.p-grid{grid-template-columns:1fr 1fr}.p-grid2{grid-template-columns:1fr 1fr}.rr-init{grid-template-columns:repeat(2,1fr)}.rr-bar-row .lbl{width:70px}.rr-legend{margin-left:80px}}
 </style>
 </head>
 <body>
@@ -446,6 +512,10 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
   <section class="view" id="view-stats">
     <div class="page-head">
       <div><h1>Analyse des performances</h1><p id="statsMeta"></p></div>
+      <div class="seg inline" id="moneySeg">
+        <button data-action="money-mode" data-mode="ccy" class="active">Devise</button>
+        <button data-action="money-mode" data-mode="r">R-multiples</button>
+      </div>
     </div>
     <div class="statgrid">
       <div class="panel sp7"><div class="panel-head"><h2><i>01</i>Par actif</h2><div class="meta" id="metaAsset"></div></div><div id="byAsset"></div></div>
@@ -457,6 +527,9 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
       <div class="panel sp5"><div class="panel-head"><h2><i>07</i>Métriques avancées</h2><div class="meta" id="metaAdv"></div></div><div class="kv-list" id="advMetrics"></div></div>
       <div class="panel sp7"><div class="panel-head"><h2><i>08</i>Horaires &amp; sessions de trading</h2><div class="meta" id="metaHours"></div></div><div id="byHours"></div><div class="mix-sec" style="margin:0 18px 14px;padding:12px 0 0;border-top:1px solid var(--line)"><h4>Sessions</h4><div id="bySession"></div></div></div>
       <div class="panel sp12"><div class="panel-head"><h2><i>09</i>Coût des erreurs d'exécution</h2><div class="meta" id="metaErr"></div></div><div id="errCost"></div></div>
+      <div class="panel sp12"><div class="panel-head"><h2><i>10</i>Efficacité de sortie — MAE / MFE</h2><div class="meta" id="metaMfe"></div></div><div class="panel-body mfe-body"><div><div class="kv-list" id="mfeKv"></div><div class="mfe-note" id="mfeNote"></div></div><div><div class="mfe-sub">Part du mouvement favorable capté, par trade (P&L ÷ MFE)</div><div class="rchart" id="effDist"></div><div class="r-lbl" id="effLabels"></div></div></div></div>
+      <div class="panel sp12"><div class="panel-head"><h2><i>11</i>Edge Finder — signaux automatiques</h2><div class="meta" id="metaEdge"></div></div><div class="panel-body" id="edgeList"></div></div>
+      <div class="panel sp12"><div class="panel-head"><h2><i>12</i>Risk / Reward — théorique vs réalisé</h2><div class="meta" id="metaRR"></div></div><div id="rrStatsBody"></div></div>
     </div>
   </section>
 
@@ -465,6 +538,30 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
     <div class="page-head">
       <div><h1>Journal de session</h1><p>Le contexte derrière les chiffres : état d'esprit, leçons, observations.</p></div>
       <button class="btn primary" data-action="new-note"><span class="ico"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>Nouvelle entrée</button>
+    </div>
+    <div class="panel" style="margin-bottom:26px">
+      <div class="panel-head">
+        <h2><i>01</i>Bilan hebdomadaire — revue structurée</h2>
+        <div class="wk-nav">
+          <button class="ibtn" data-action="wk-prev" title="Semaine précédente" style="font-size:16px">‹</button>
+          <b id="wkLabel">—</b>
+          <button class="ibtn" data-action="wk-next" title="Semaine suivante" style="font-size:16px">›</button>
+          <button class="btn sm" data-action="wk-today" id="wkTodayBtn" style="display:none">Cette semaine</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="wk-kpis" id="wkKpis"></div>
+        <div class="wk-obs">
+          <div><label>Ce que j'ai bien fait — à continuer</label><textarea id="wkGood" placeholder="Comportements gagnants observés cette semaine…"></textarea></div>
+          <div><label>Ce qui m'a coûté — à corriger</label><textarea id="wkBad" placeholder="Erreurs récurrentes, pertes évitables…"></textarea></div>
+          <div><label>Un seul ajustement pour la semaine prochaine</label><textarea id="wkAdjust" placeholder="Une règle concrète et mesurable (filtre, taille, horaire…)"></textarea></div>
+        </div>
+        <div class="wk-actions">
+          <button class="btn primary" data-action="wk-save">Enregistrer le bilan</button>
+          <button class="btn" data-action="wk-note">Créer une entrée de journal</button>
+          <span class="faint" id="wkSaved"></span>
+        </div>
+      </div>
     </div>
     <div class="tl" id="timeline"></div>
   </section>
@@ -553,11 +650,12 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
       <div class="f-field"><label>Marché</label><select id="tMarket"><option>Forex</option><option>Crypto</option><option>Indices</option><option>Actions</option><option>Matières premières</option><option>Futures</option><option>Autre</option></select></div>
       <div class="f-field full"><label>Direction *</label>
         <div class="dir-toggle"><button type="button" id="dirLong" class="on-long">▲ LONG</button><button type="button" id="dirShort">▼ SHORT</button></div></div>
-      <div class="f-field"><label>Taille *</label>
+      <div class="f-field"><label id="tQtyLbl">Taille *</label>
         <div style="display:flex;gap:8px">
           <input id="tQty" type="number" step="any" min="0" placeholder="0,25" style="flex:1">
           <select id="tQtyMode" style="width:96px;flex:none"><option value="lots">lot(s)</option><option value="units">unité(s)</option></select>
         </div>
+        <div class="mood-preview" id="tLockHint" style="display:none"><i style="background:var(--accent)"></i><span>Trade géré avec clôtures partielles : entrée et taille initiales verrouillées (historique RR immuable). Le stop et le TP restent modifiables — ce sont les valeurs « actuelles ».</span></div>
         <div class="mood-preview" id="qtyHint" style="display:none"><i></i><span></span></div>
       </div>
       <div class="f-field"><label>Stratégie</label><input id="tStrategy" list="stratList" placeholder="Breakout">
@@ -572,10 +670,10 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
     </div>
     <div class="fs-title">Entrée</div>
     <div class="f-grid">
+      <div class="f-field"><label id="tEntryLbl">Prix d'entrée *</label><input id="tEntry" type="number" step="any" placeholder="1,08450"></div>
+      <div class="f-field"><label id="tStopLbl">Stop loss</label><input id="tStop" type="number" step="any" placeholder="1,08200"></div>
+      <div class="f-field"><label id="tTPLbl">Take profit (objectif)</label><input id="tTP" type="number" step="any" placeholder="1,09000"></div>
       <div class="f-field"><label>Date &amp; heure *</label><input id="tEntryAt" type="datetime-local"></div>
-      <div class="f-field"><label>Prix d'entrée *</label><input id="tEntry" type="number" step="any" placeholder="1,08450"></div>
-      <div class="f-field"><label>Stop loss</label><input id="tStop" type="number" step="any" placeholder="1,08200"></div>
-      <div class="f-field"><label>Take profit (objectif)</label><input id="tTP" type="number" step="any" placeholder="1,09000"></div>
     </div>
     <div class="fs-title">Sortie</div>
     <div class="f-grid">
@@ -583,9 +681,20 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
       <div class="f-field"><label>Prix de sortie</label><input id="tExit" type="number" step="any" placeholder="Laisser vide si en cours"></div>
       <div class="f-field"><label>Frais / commissions</label><input id="tFees" type="number" step="any" placeholder="0"></div>
       <div class="f-field"><label>État d'esprit</label><select id="tMood"></select><div class="mood-preview" id="moodPreview"><i></i><span></span></div></div>
+      <div class="f-field"><label>Plus haut atteint (MFE)</label><input id="tHigh" type="number" step="any" placeholder="Ex. 1,09120"></div>
+      <div class="f-field"><label>Plus bas atteint (MAE)</label><input id="tLow" type="number" step="any" placeholder="Ex. 1,08280"><div class="mood-preview" id="excHint" style="display:none"><i></i><span></span></div></div>
       <div class="f-field full"><label>P&L final — saisie manuelle (facultatif)</label><input id="tPnlOv" type="number" step="any" placeholder="Vide = calcul automatique">
         <div class="mood-preview" id="pnlOvHint" style="display:none"><i></i><span></span></div></div>
     </div>
+    <div class="fs-title">Clôtures partielles</div>
+    <div id="tPartials"></div>
+    <div class="p-actions">
+      <button type="button" class="btn sm" data-action="add-partial">+ Clôture partielle</button>
+      <span class="faint">% du volume calculé depuis les volumes réellement clôturés</span>
+    </div>
+    <div id="tPartSplit"></div>
+    <div class="fs-title">Risk / Reward — théorique vs réalisé</div>
+    <div id="rrBox"></div>
     <div class="fs-title">Analyse</div>
     <div class="f-field full" style="margin-bottom:14px"><label>Erreurs d'exécution — tags</label><div class="chips" id="tTags"></div></div>
     <div class="f-field"><label>Notes — setup, exécution, ressentis</label><textarea id="tNotes" rows="4" placeholder="Contexte, plan de trade, respect du risque…"></textarea></div>
@@ -665,6 +774,34 @@ td .cls{display:block;font-family:var(--mono);font-size:9px;color:var(--faint);l
    · Contrats personnalisés par symbole (conventions courtiers)
    · P&L final saisissable manuellement — prioritaire sur le calcul
      automatique (swaps, slippage, résultat exact affiché par le courtier)
+
+   v4 — inspirations TradesViz / TradeZella / TraderSync / Edgewonk :
+   · MAE / MFE (plus haut & plus bas atteints) + efficacité de sortie :
+     détection « stop trop large » et « objectifs trop courts »
+   · Bilan hebdomadaire structuré : KPIs vs moyenne des 4 semaines
+     précédentes + 3 observations (réussi / coûteux / un ajustement),
+     convertibles en entrée de journal (processus TradeZella)
+   · Edge Finder : scan automatique des patterns — setups, jours,
+     états d'esprit, tilt après 2 pertes, surtrading — avec taille
+     d'échantillon affichée (garde « pourrait être la chance »)
+   · Bascule des analyses devise ⇄ R-multiples (TraderSync)
+   · Séries de gains / pertes max dans les métriques avancées
+
+   v5 — module Risk/Reward : théorique vs réalisé :
+   · Snapshot immuable des données initiales (entrée, stop, TP, taille)
+     — le RR théorique reste historique même si stop/TP sont modifiés
+   · Clôtures partielles multiples : date, prix, volume, % du volume
+     initial calculé depuis les volumes RÉELS, frais, P&L et R-multiple
+     par clôture — modifiables et supprimables, recalcul instantané
+   · RR réalisé = profit net total (partielles + solde, frais inclus) /
+     risque financier initial
+   · Coût d'opportunité : écart contrefactuel avec le scénario « tout au
+     TP initial », en R et en devise (jamais présenté comme une perte)
+   · Tableau comparatif + barres théorique/realisé + analyse auto de la
+     qualité de gestion (répartition, protection, stop, scénarios)
+   · Statistiques globales : RR théo/réalisé moyens, écart, profit moyen
+     avec/sans partielles, distribution des RR réalisés, évolution
+     mensuelle, comparaison par méthode de prise partielle
    ================================================================ */
 
 /* ---------- Utilitaires ---------- */
@@ -908,15 +1045,27 @@ function confirmDialog(title, msg, cb) {
 /* ---------- Store ---------- */
 const KEY = 'carnet.v1';
 const DEFAULTS = { capital: 25000, symbol: '€', currency: 'EUR', dailyLossPct: 1, weeklyLossPct: 3, monthlyTargetPct: 4, maxTradesDay: 3, riskPct: 1 };
-let S = { settings: { ...DEFAULTS }, trades: [], notes: [] };
+let S = { settings: { ...DEFAULTS }, trades: [], notes: [], weekly: {} };
 function migrate() {
   S.settings = Object.assign({}, DEFAULTS, S.settings || {});
   if (!S.settings.currency || !CCY_LIST.includes(S.settings.currency))
     S.settings.currency = SYM_TO_CCY[S.settings.symbol] || 'EUR';
   if (!S.settings.specs || typeof S.settings.specs !== 'object') S.settings.specs = {};
+  if (!S.weekly || typeof S.weekly !== 'object' || Array.isArray(S.weekly)) S.weekly = {};
   S.trades.forEach(t => {
     if (!Array.isArray(t.tags)) t.tags = [];
     if (!t.qtyMode) t.qtyMode = 'units';
+    /* v5 — snapshot immuable des données initiales (rétrocompatible :
+       les trades existants gardent leurs valeurs actuelles comme origine) */
+    if (!t.initial || !isFinite(t.initial.entry)) t.initial = { entry: t.entry, stop: t.stop, tp: t.tp, qty: t.qty };
+    if (!Array.isArray(t.partials)) t.partials = [];
+    t.partials.forEach(p => { if (!p.id) p.id = uid(); if (!t.managed) t.managed = true; });
+    /* Trade clôturé sans date de sortie (clôturé via partielles ou P&L
+       manuel) : date reconstituée pour tri et statistiques temporelles */
+    if (isClosed(t) && !t.exitAt) {
+      const last = t.partials[t.partials.length - 1];
+      t.exitAt = (last && last.at) || t.entryAt || '';
+    }
   });
 }
 function save() {
@@ -930,7 +1079,7 @@ function load() {
     if (!raw) { generateDemo(); save(); return; }
     const d = JSON.parse(raw);
     if (d && Array.isArray(d.trades)) {
-      S = { settings: Object.assign({}, DEFAULTS, d.settings), trades: d.trades, notes: d.notes || [] };
+      S = { settings: Object.assign({}, DEFAULTS, d.settings), trades: d.trades, notes: d.notes || [], weekly: d.weekly || {} };
       migrate();
     } else { generateDemo(); save(); }
   } catch (e) { generateDemo(); save(); }
@@ -938,10 +1087,84 @@ function load() {
 
 /* ---------- Moteur de calcul ---------- */
 const dirMul = t => t.dir === 'long' ? 1 : -1;
+
+/* ================================================================
+   v5 — DONNÉES INITIALES IMMUALES & CLÔTURES PARTIELLES
+   t.initial = { entry, stop, tp, qty } : photo prise à la création
+   du trade (ou à la migration). JAMAIS modifiée ensuite sur un trade
+   géré : le RR théorique reste une donnée historique, même si le
+   stop ou le TP évoluent pendant la gestion.
+   t.partials = [ { id, at, price, qty (unités), fees, pnlOv } ] :
+   les clôtures partielles. Le « prix de sortie » du formulaire reste
+   la clôture FINALE du volume restant — aucun double comptage.
+   ================================================================ */
+function initialOf(t) {
+  const i = t && t.initial;
+  return (i && isFinite(i.entry) && isFinite(i.qty)) ? i : { entry: t && t.entry, stop: t && t.stop, tp: t && t.tp, qty: t && t.qty };
+}
+/* Volume réellement encore ouvert (taille initiale − partielles) */
+function effectiveQty(t) {
+  const tot = initialOf(t).qty ?? (t && t.qty) ?? 0;
+  const closed = ((t && Array.isArray(t.partials)) ? t.partials : []).reduce((s, p) => s + (p.qty || 0), 0);
+  return Math.max(0, tot - closed);
+}
+/* Risque financier INITIAL (à la mise en place) — référence des R-multiples */
+function initialRisk(t) {
+  const i = initialOf(t);
+  if (i.stop == null || i.entry == null || i.entry === i.stop) return null;
+  return toAcct(Math.abs(i.entry - i.stop) * i.qty, resolveSpec(t.sym, t.market).q);
+}
+/* RR THÉORIQUE — distance entrée→TP / distance entrée→stop, sur les
+   valeurs initiales. Immuable : ne dépend pas des modifications. */
+function rrTheo(t) {
+  const i = initialOf(t);
+  if (i.entry == null || i.stop == null || i.tp == null || i.entry === i.stop) return null;
+  return Math.abs(i.tp - i.entry) / Math.abs(i.entry - i.stop);
+}
+/* P&L net d'une clôture partielle (calculé, ou saisi manuellement) */
+function partialPnl(t, p) {
+  if (p.pnlOv != null && isFinite(p.pnlOv)) return p.pnlOv;
+  if (p.price == null || p.qty == null) return 0;
+  const i = initialOf(t);
+  return toAcct((p.price - i.entry) * p.qty * dirMul(t), resolveSpec(t.sym, t.market).q) - (p.fees || 0);
+}
+/* Agrégat des clôtures partielles d'un trade */
+function partialsSum(t) {
+  const list = (t && Array.isArray(t.partials)) ? t.partials : [];
+  const i = initialOf(t);
+  const tot = i.qty ?? t.qty ?? 0;
+  let qty = 0, pnl = 0, fees = 0;
+  for (const p of list) { qty += (p.qty || 0); pnl += partialPnl(t, p); fees += (p.fees || 0); }
+  const eps = Math.max(1e-9, tot * 1e-9);
+  return {
+    n: list.length, qty, pnl, fees, tot,
+    remQty: Math.max(0, tot - qty),
+    closedPct: tot ? Math.min(100, qty / tot * 100) : 0,
+    remPct: tot ? Math.max(0, (tot - qty) / tot * 100) : 0,
+    full: tot ? (tot - qty) <= eps : false
+  };
+}
 function calcPnlAuto(t) {
-  if (t.exit == null || t.exit === '') return null;
-  const raw = (t.exit - t.entry) * t.qty * dirMul(t);
-  return toAcct(raw, resolveSpec(t.sym, t.market).q) - (t.fees || 0);
+  /* Sans clôture partielle : comportement d'origine (inchangé) */
+  if (!Array.isArray(t.partials) || !t.partials.length) {
+    if (t.exit == null || t.exit === '') return null;
+    const raw = (t.exit - t.entry) * t.qty * dirMul(t);
+    return toAcct(raw, resolveSpec(t.sym, t.market).q) - (t.fees || 0);
+  }
+  /* Avec clôtures partielles : tout est ancré sur l'ENTRÉE INITIALE.
+     Total = Σ partielles (nettes de leurs frais) + solde clôturé au
+     prix de sortie final − frais de la clôture finale. */
+  const i = initialOf(t), spec = resolveSpec(t.sym, t.market), dm = dirMul(t);
+  let sum = 0, closed = 0;
+  for (const p of t.partials) {
+    sum += (p.pnlOv != null && isFinite(p.pnlOv)) ? p.pnlOv
+      : toAcct((p.price - i.entry) * p.qty * dm, spec.q) - (p.fees || 0);
+    closed += (p.qty || 0);
+  }
+  const rem = (i.qty ?? t.qty) - closed;
+  if (t.exit != null && t.exit !== '' && rem > 1e-9)
+    sum += toAcct((t.exit - i.entry) * rem * dm, spec.q);
+  return sum - (t.fees || 0);
 }
 /* P&L d'un trade — la saisie manuelle (t.pnlOverride : résultat net final
    affiché par le courtier) est PRIORITAIRE sur le calcul automatique. */
@@ -949,17 +1172,20 @@ function calcPnl(t) {
   if (t.pnlOverride != null && isFinite(t.pnlOverride)) return t.pnlOverride;
   return calcPnlAuto(t);
 }
+/* Risque au stop ACTUEL, sur le volume restant — exposition live */
 function calcRisk(t) {
   if (t.stop == null || t.stop === '') return null;
-  return toAcct(Math.abs(t.entry - t.stop) * t.qty, resolveSpec(t.sym, t.market).q);
+  return toAcct(Math.abs(t.entry - t.stop) * effectiveQty(t), resolveSpec(t.sym, t.market).q);
 }
+/* R-multiple : toujours rapporté au RISQUE INITIAL (convention pro) */
 function calcR(t) {
-  const r = calcRisk(t), p = calcPnl(t);
+  const r = initialRisk(t), p = calcPnl(t);
   return (r && r > 0 && p != null) ? p / r : null;
 }
-const isClosed = t => (t.exit != null && t.exit !== '') || (t.pnlOverride != null && isFinite(t.pnlOverride));
+const isClosed = t => (t.exit != null && t.exit !== '') || (t.pnlOverride != null && isFinite(t.pnlOverride)) || partialsSum(t).full;
 const closedTrades = () => S.trades.filter(isClosed).sort((a, b) => new Date(a.exitAt) - new Date(b.exitAt));
 const openTrades = () => S.trades.filter(t => !isClosed(t));
+function fmtR(v, dec = 2) { return v == null || !isFinite(v) ? '—' : (v >= 0 ? '+' : '−') + Math.abs(v).toLocaleString('fr-FR', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + 'R'; }
 
 function computeStats(list) {
   const c = closedTrades().filter(t => list.includes(t));
@@ -1064,13 +1290,32 @@ function generateDemo() {
       if (!win && r() < 0.5) tags.push(pick(['FOMO', 'Surtrading', 'Sans plan', 'Stop trop serré', 'Contre-tendance']));
       if (!win && mood === 'Vengeur') tags.push('Vengeance');
       if (win && r() < 0.06) tags.push('Sortie précoce');
-      trades.push({
+      const maeR = win ? 0.05 + r() * 0.6 : Math.min(1.08, Math.abs(Rmul) + r() * 0.15);
+      const mfeR = Math.max(Rmul + 0.02, win ? Rmul + 0.08 + r() * (tags.includes('Sortie précoce') ? 1.6 : 0.9) : (r() < 0.5 ? r() * 0.25 : 0.35 + r() * 0.7));
+      const high = dir === 'long' ? entry + mfeR * stopDist : entry + maeR * stopDist;
+      const low = dir === 'long' ? entry - maeR * stopDist : entry - mfeR * stopDist;
+      const tr = {
         id: uid(), sym: a.sym, market: a.cls, dir, qty, qtyMode,
         entry, stop: +(entry - sg * stopDist).toFixed(a.pxd),
         tp: +(entry + sg * stopDist * (1.8 + r() * 1.2)).toFixed(a.pxd),
         exit, entryAt: toLocalInput(entryAt), exitAt: toLocalInput(exitAt),
+        high: +high.toFixed(a.pxd), low: +low.toFixed(a.pxd),
         fees, strategy: pick(strats), mood, notes: '', tags
-      });
+      };
+      /* v5 — démo : quelques gagnantes gérées avec une clôture partielle */
+      if (win && Rmul > 1.4 && r() < 0.62) {
+        const spec = resolveSpec(a.sym, a.cls);
+        let pq = qty * (0.3 + r() * 0.25);
+        pq = a.lots ? Math.round(pq / spec.c * 100) / 100 * spec.c : Math.round(pq);
+        const minRem = a.lots ? spec.c * 0.01 : 1;
+        if (pq > 0 && qty - pq >= minRem * 0.999) {
+          const pPrice = +(entry + sg * stopDist * (0.7 + r() * 0.5)).toFixed(a.pxd);
+          const pAt = new Date(entryAt.getTime() + (18 + r() * 100) * 60000);
+          tr.partials = [{ id: uid(), at: toLocalInput(pAt), price: pPrice, qty: pq, fees: 0, pnlOv: null }];
+          tr.managed = true;
+        }
+      }
+      trades.push(tr);
     }
   }
   const mkNote = (ago, mood, title, body, lesson) => {
@@ -1103,7 +1348,7 @@ const ICONS = {
 const ic = n => `<span class="ico"><svg viewBox="0 0 16 16">${ICONS[n]}</svg></span>`;
 
 /* ---------- État UI ---------- */
-const ui = { view: 'dashboard', period: '90', calY: new Date().getFullYear(), calM: new Date().getMonth(), sort: { key: 'date', dir: -1 }, formDir: 'long', formTags: new Set(), editTrade: null, editNote: null, closing: false };
+const ui = { view: 'dashboard', period: '90', calY: new Date().getFullYear(), calM: new Date().getMonth(), sort: { key: 'date', dir: -1 }, formDir: 'long', formTags: new Set(), formPartials: [], pQtyMode: 'units', editTrade: null, editNote: null, closing: false, moneyMode: 'ccy', wkOff: 0 };
 let eqPoints = [];
 
 function periodDays() { return ui.period === 'all' ? Infinity : +ui.period; }
@@ -1467,6 +1712,8 @@ function renderAdvanced() {
     kv('Ratio de Sortino (par trade)', adv.sortino == null ? '—' : adv.sortino.toFixed(2), adv.sortino >= 0 ? 'pos' : 'neg') +
     kv('Score qualité système (SQN)', adv.sqn == null ? '—' : adv.sqn.toFixed(2) + ' — ' + sqnLbl(adv.sqn), adv.sqn >= 2.5 ? 'pos' : (adv.sqn != null && adv.sqn < 1.6 ? 'neg' : '')) +
     kv('Facteur de récupération', st.maxDD > 0 ? (st.net / st.maxDD).toFixed(2) : '—', st.maxDD > 0 && st.net / st.maxDD >= 1 ? 'pos' : 'neg') +
+    kv('Série gagnante max', st.maxWinStreak ? st.maxWinStreak + ' trades' : '—', 'pos') +
+    kv('Série perdante max', st.maxLossStreak ? st.maxLossStreak + ' trades' : '—', st.maxLossStreak >= 5 ? 'neg' : '') +
     kv('R cumulé (trades avec stop)', adv.rN ? (adv.rTotal >= 0 ? '+' : '−') + Math.abs(adv.rTotal).toFixed(1) + 'R' : '—', adv.rTotal >= 0 ? 'pos' : 'neg') +
     kv('Frais / P&L brut', (st.gp + st.gl) > 0 ? pct(st.fees / (st.gp + st.gl) * 100) : '—', '');
 }
@@ -1506,6 +1753,258 @@ function renderErrors() {
   const cost = ag.reduce((s, o) => s + (o.net < 0 ? -o.net : 0), 0);
   $('metaErr').innerHTML = `Pertes cumulées des trades tagués : <b class="neg">${money(-cost)}</b>`;
   $('errCost').innerHTML = ag.map(o => barRowHtml({ ...o, all: ag })).join('');
+}
+
+/* ---------- MAE / MFE & efficacité de sortie (v4 — TradesViz / TradeZella) ---------- */
+function excursions(t) {
+  if (t.entry == null || t.stop == null || t.entry === t.stop) return null;
+  if (t.high == null && t.low == null) return null;
+  const d = Math.abs(t.entry - t.stop);
+  let mfe = null, mae = null;
+  if (t.dir === 'short') {
+    if (t.low != null) mfe = Math.max(0, (t.entry - t.low) / d);
+    if (t.high != null) mae = Math.max(0, (t.high - t.entry) / d);
+  } else {
+    if (t.high != null) mfe = Math.max(0, (t.high - t.entry) / d);
+    if (t.low != null) mae = Math.max(0, (t.entry - t.low) / d);
+  }
+  return { mfe, mae };
+}
+function exitEff(t) {
+  const e = excursions(t);
+  if (!e || !(e.mfe > 0)) return null;
+  const r = calcR(t);
+  return r == null ? null : r / e.mfe;
+}
+function renderMfe() {
+  const measured = closedTrades().filter(t => t.high != null || t.low != null);
+  if (!measured.length) {
+    $('metaMfe').textContent = '';
+    $('mfeKv').innerHTML = '<div class="empty-state" style="border:none">Renseignez « Plus haut atteint » et « Plus bas atteint » dans le formulaire de trade (section Sortie) : jusqu\u2019où le marché est-il allé en votre faveur (MFE) et contre vous (MAE) ? C\u2019est l\u2019analyse signature de TradesViz et TradeZella pour affiner stops et objectifs.</div>';
+    $('mfeNote').innerHTML = ''; $('effDist').innerHTML = ''; $('effLabels').innerHTML = '';
+    return;
+  }
+  const rows = measured.map(t => ({ e: excursions(t), r: calcR(t) })).filter(x => x.e && x.e.mfe != null && x.r != null);
+  const n = rows.length;
+  const avgOf = f => { const v = rows.map(x => f(x.e)).filter(v => v != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
+  const avgMfe = avgOf(e => e.mfe), avgMae = avgOf(e => e.mae);
+  const effAll = rows.map(x => { const v = x.r / x.e.mfe; return isFinite(v) ? v : null; });
+  const effs = effAll.filter(v => v != null);
+  const winEffs = rows.map((x, i) => (x.r > 0 ? effAll[i] : null)).filter(v => v != null);
+  const avgEff = winEffs.length ? winEffs.reduce((a, b) => a + b, 0) / winEffs.length : null;
+  const winRows = rows.filter(x => x.r > 0 && x.e.mae != null);
+  const wMae = winRows.length ? winRows.reduce((s, x) => s + x.e.mae, 0) / winRows.length : null;
+  const kv = (a, b, cls = '') => `<div class="mix-kv"><span>${a}</span><b class="${cls}">${b}</b></div>`;
+  $('metaMfe').textContent = n + ' trades mesurables (extrêmes + stop)';
+  $('mfeKv').innerHTML =
+    kv('MFE moyen', avgMfe == null ? '—' : '+' + avgMfe.toFixed(2) + 'R', 'acc') +
+    kv('MAE moyen', avgMae == null ? '—' : '−' + Math.abs(avgMae).toFixed(2) + 'R', '') +
+    kv('Efficacité de sortie (gagnantes)', avgEff == null ? '—' : pct(avgEff * 100), avgEff == null ? '' : avgEff >= .6 ? 'pos' : 'neg') +
+    kv('MAE moyen des gagnantes', wMae == null ? '—' : '−' + wMae.toFixed(2) + 'R (' + winRows.length + ')', wMae != null && wMae < .5 ? 'acc' : '');
+  const bks = [
+    { l: 'perdant', f: v => v < 0, c: 'var(--neg)' },
+    { l: '≤ 25%', f: v => v >= 0 && v <= .25, c: 'var(--neg)' },
+    { l: '25–50%', f: v => v > .25 && v <= .5, c: 'var(--neg)' },
+    { l: '50–75%', f: v => v > .5 && v <= .75, c: 'var(--accent)' },
+    { l: '75–100%', f: v => v > .75 && v <= 1, c: 'var(--pos)' },
+    { l: '> 100%', f: v => v > 1, c: 'var(--pos)' }
+  ];
+  const counts = bks.map(b => effs.filter(b.f).length);
+  const mx = Math.max(1, ...counts);
+  $('effDist').innerHTML = counts.map((cn, i) => `<div class="r-col"><b>${cn || ''}</b><i style="height:${cn / mx * 110}px;background:${bks[i].c}"></i></div>`).join('');
+  $('effLabels').innerHTML = bks.map(b => `<span>${b.l}</span>`).join('');
+  const bits = [];
+  if (avgEff != null && winEffs.length >= 6) bits.push(avgEff >= .65
+    ? `<b>Bonne capture :</b> sur vos gagnantes, vous réalisez en moyenne ${pct(avgEff * 100)} du mouvement favorable disponible (MFE).`
+    : `<b>Sorties précoces :</b> sur vos gagnantes, vous ne captez que ${pct(avgEff * 100)} du mouvement favorable moyen — objectifs trop courts ou panique à la sortie.`);
+  if (wMae != null && winRows.length >= 8) bits.push(wMae < .5
+    ? `<b>Stop trop large ?</b> Vos gagnantes n'ont en moyenne dépassé <b>−${wMae.toFixed(2)}R</b> contre elles : un stop à −0,5R permettrait presque le double de taille à risque égal (à valider en paper trading d'abord).`
+    : `Vos gagnantes « respirent » jusqu'à <b>−${wMae.toFixed(2)}R</b> avant de partir : le stop actuel est cohérent avec leur comportement.`);
+  const spoiled = rows.filter(x => x.r < 0 && x.e.mfe >= .8).length;
+  if (spoiled >= 4) bits.push(`<b>MFE gaspillé :</b> ${spoiled} trade(s) ont atteint +0,8R ou plus avant de finir perdants — une règle breakeven après +1R les aurait sauvés.`);
+  $('mfeNote').innerHTML = bits.join('<br>') || 'Les analyses se débloqueront après ~6 trades documentés (extrêmes + stop).';
+}
+
+/* ---------- Edge Finder (v4 — inspiré d'Edgewonk / EdgeFlow) ---------- */
+function edgeFinder() {
+  const c = closedTrades();
+  const items = [];
+  const add = (tone, title, detail, n, nMin) => items.push({ tone, title, detail, n, weak: n < (nMin || 8) });
+  const st = computeStats(c);
+  /* 1. Stratégies vs moyenne globale */
+  const sAgg = aggregate(c, t => t.strategy || 'Non classée').filter(o => o.count >= 5 && o.rN >= 3);
+  if (sAgg.length >= 2) {
+    const byR = sAgg.map(o => ({ ...o, avg: o.rSum / o.rN })).sort((a, b) => b.avg - a.avg);
+    const best = byR[0], worst = byR[byR.length - 1], g = st.avgR || 0;
+    const gl = g >= 0 ? '+' + g.toFixed(2) : '−' + Math.abs(g).toFixed(2);
+    if (best.avg > g + 0.15) add('pos', `Le setup « ${esc(best.key)} » est votre moteur`, `<b>+${best.avg.toFixed(2)}R</b> par trade contre ${gl}R toutes stratégies confondues — augmentez sa part quand les conditions s'y prêtent.`, best.count, 8);
+    if (worst.avg < g - 0.15) add('neg', worst.avg < 0 ? `Le setup « ${esc(worst.key)} » plombe vos résultats` : `Le setup « ${esc(worst.key)} » sous-performe nettement`, `<b>${worst.avg >= 0 ? '+' : '−'}${Math.abs(worst.avg).toFixed(2)}R</b> par trade contre ${gl}R pour l'ensemble (${worst.count} trades). ${worst.avg < 0 ? 'Mettez-le en pause ou retravaillez son filtre d\u2019entrée.' : 'Écart net : resserez ses conditions d\u2019entrée ou réduisez la taille.'}`, worst.count, 8);
+  }
+  /* 2. Jours de semaine */
+  const dAgg = aggregate(c, t => (new Date(t.exitAt).getDay() + 6) % 7).filter(o => o.count >= 8);
+  if (dAgg.length >= 3) {
+    const wrD = o => pct(o.wins / (o.wins + o.losses) * 100);
+    const worstD = dAgg.reduce((a, b) => (b.net < a.net ? b : a));
+    if (worstD.net < 0) add('neg', `${JOURS[worstD.key]} est votre pire jour`, `<b>${money(worstD.net, { sign: true })}</b> cumulés sur ${worstD.count} trades (WR ${wrD(worstD)}). Réduisez la taille ou passez ce jour en observation.`, worstD.count, 10);
+    const bestD = dAgg.reduce((a, b) => (b.net > a.net ? b : a));
+    if (bestD.net > 0) add('pos', `${JOURS[bestD.key]} est votre meilleur jour`, `<b>${money(bestD.net, { sign: true })}</b> cumulés sur ${bestD.count} trades (WR ${wrD(bestD)}). Qu'est-ce qui change ce jour-là ? Documentez-le dans le journal.`, bestD.count, 10);
+  }
+  /* 3. États d'esprit */
+  const mAgg = aggregate(c, t => t.mood).filter(o => o.key && o.count >= 5 && o.rN >= 3);
+  if (mAgg.length >= 2) {
+    const wm = mAgg.map(o => ({ ...o, avg: o.rSum / o.rN })).sort((a, b) => a.avg - b.avg)[0];
+    if (wm.avg < 0) add('neg', `L'état « ${esc(wm.key)} » détruit votre edge`, `<b>−${Math.abs(wm.avg).toFixed(2)}R</b> par trade dans cet état (${wm.count} trades, WR ${pct(wm.wins / (wm.wins + wm.losses) * 100)}). Si vous vous surprenez dans cet état : pas de nouveau trade.`, wm.count, 6);
+  }
+  /* 4. Coût des erreurs */
+  const eM = new Map();
+  for (const t of c) for (const g of (t.tags || [])) {
+    if (!eM.has(g)) eM.set(g, { n: 0, net: 0 });
+    const o = eM.get(g); o.n++; o.net += calcPnl(t);
+  }
+  if (eM.size) {
+    const top = [...eM.entries()].map(([k, v]) => ({ k, ...v })).sort((a, b) => a.net - b.net)[0];
+    if (top.net < 0) add('neg', `L'erreur « ${esc(top.k)} » coûte le plus cher`, `<b>${money(top.net, { sign: true })}</b> sur ${top.n} trades tagués. Une règle écrite dans le plan de trade vaut mieux qu'une bonne intention.`, top.n, 5);
+  }
+  /* 5. Tilt : trade suivant 2 pertes consécutives */
+  let cl = 0; const after2 = [];
+  for (const t of c) {
+    const p = calcPnl(t);
+    if (p == null) continue;
+    const r = calcR(t);
+    if (cl >= 2 && r != null) after2.push(r);
+    cl = p < 0 ? cl + 1 : 0;
+  }
+  if (after2.length >= 6) {
+    const m = after2.reduce((a, b) => a + b, 0) / after2.length;
+    if (m < 0) add('neg', 'Enchaîner après 2 pertes coûte cher', `Le trade qui suit 2 pertes consécutives fait en moyenne <b>${m >= 0 ? '+' : '−'}${Math.abs(m).toFixed(2)}R</b> (${after2.length} occurrences). Règle anti-tilt : pause de 15 minutes après la 2e perte.`, after2.length, 8);
+    else add('pos', 'Vous encaissez bien les séries de pertes', `Après 2 pertes consécutives, votre prochain trade fait <b>+${m.toFixed(2)}R</b> en moyenne — aucune trace de vengeance.`, after2.length, 8);
+  }
+  /* 6. Surtrading vs jours disciplinés */
+  const mxT = S.settings.maxTradesDay || 0;
+  if (mxT > 0) {
+    const days = new Map();
+    for (const t of c) { const k = dayKey(new Date(t.exitAt)); if (!days.has(k)) days.set(k, { n: 0, net: 0 }); const o = days.get(k); o.n++; o.net += calcPnl(t); }
+    const over = [...days.values()].filter(o => o.n > mxT), ok = [...days.values()].filter(o => o.n <= mxT);
+    if (over.length >= 3 && ok.length >= 3) {
+      const a1 = over.reduce((s, o) => s + o.net / o.n, 0) / over.length, a2 = ok.reduce((s, o) => s + o.net / o.n, 0) / ok.length;
+      if (a1 < a2) add('neg', 'Le surtrading vous coûte', `P&L moyen par trade : <b>${money(a1, { sign: true })}</b> les jours à plus de ${mxT} trades contre <b>${money(a2, { sign: true })}</b> sinon. Votre garde-fou est bien réglé — respectez-le.`, over.length, 5);
+    }
+  }
+  /* 7. Stop trop large (MAE des gagnantes) */
+  const wRows = c.map(t => ({ r: calcR(t), e: excursions(t) })).filter(x => x.r > 0 && x.e && x.e.mae != null);
+  if (wRows.length >= 10) {
+    const wMae = wRows.reduce((s, x) => s + x.e.mae, 0) / wRows.length;
+    if (wMae < 0.5) add('info', 'Marge sur le stop', `Vos gagnantes n'ont en moyenne dépassé <b>−${wMae.toFixed(2)}R</b> contre elles : un stop plus serré permettrait une taille supérieure à risque égal. À tester en paper trading d'abord.`, wRows.length, 12);
+  }
+  /* 8. Biais directionnel */
+  const L = c.filter(t => t.dir === 'long'), Sh = c.filter(t => t.dir === 'short');
+  const lr = L.map(calcR).filter(v => v != null), sr = Sh.map(calcR).filter(v => v != null);
+  if (lr.length >= 6 && sr.length >= 6) {
+    const lm = lr.reduce((a, b) => a + b, 0) / lr.length, sm = sr.reduce((a, b) => a + b, 0) / sr.length;
+    if (lm - sm > 0.25) add('info', 'Biais directionnel', `Vos longs font <b>+${lm.toFixed(2)}R</b>/trade contre <b>${sm >= 0 ? '+' : '−'}${Math.abs(sm).toFixed(2)}R</b> pour les shorts — vous tradez mieux dans un sens.`, L.length + Sh.length, 12);
+    else if (sm - lm > 0.25) add('info', 'Biais directionnel', `Vos shorts font <b>+${sm.toFixed(2)}R</b>/trade contre <b>${lm >= 0 ? '+' : '−'}${Math.abs(lm).toFixed(2)}R</b> pour les longs — vous tradez mieux dans un sens.`, L.length + Sh.length, 12);
+  }
+  /* 9. Séries perdantes */
+  if (st.maxLossStreak >= 5) add('info', 'Séries perdantes à intégrer', `Votre plus longue série : <b>${st.maxLossStreak} trades perdants</b>. Avec ${pct((1 - st.winRate) * 100)} de perdantes statistiques, c'est normal — dimensionnez le risque pour la traverser sans casse.`, st.maxLossStreak, 5);
+  /* 10. Poids des frais */
+  if (st.gp + st.gl > 0 && st.fees / (st.gp + st.gl) > 0.15 && st.count >= 15) add('neg', 'Frais trop lourds', `<b>${pct(st.fees / (st.gp + st.gl) * 100)}</b> du volume échangé part en commissions (${money(st.fees)}). Vérifiez votre grille tarifaire ou réduisez la fréquence.`, st.count, 15);
+  return items;
+}
+function renderEdge() {
+  const c = closedTrades();
+  if (c.length < 8) {
+    $('metaEdge').textContent = '';
+    $('edgeList').innerHTML = '<div class="empty-state" style="border:none;padding:36px 24px">L\u2019assistant analyse vos trades dès que vous en avez au moins 8 clôturés (idéal : 30+). Les meilleurs journaux du marché appellent ça « Edge Finder » ou « scan automatique » — ici tout tourne en local, sans compte ni abonnement.</div>';
+    return;
+  }
+  const w = i => (i.tone === 'neg' ? 0 : i.tone === 'pos' ? 1 : 2) + (i.weak ? .5 : 0);
+  const items = edgeFinder().sort((a, b) => w(a) - w(b)).slice(0, 8);
+  $('metaEdge').textContent = items.length + ' signaux · scan de ' + c.length + ' trades clôturés';
+  $('edgeList').innerHTML = items.map(i =>
+    `<div class="ef-item ${i.tone}"><div><b>${i.title}</b><p>${i.detail}</p></div><span class="ef-n">n = ${i.n}${i.weak ? '<span class="weak">échantillon faible</span>' : ''}</span></div>`).join('') ||
+    '<div class="empty-state" style="border:none;padding:36px 24px">Aucun signal marquant — vos performances sont homogènes entre setups, jours et états d\u2019esprit.</div>';
+}
+
+/* ---------- Bilan hebdomadaire (v4 — processus TradeZella) ---------- */
+function isoWeekKey(d) {
+  const dt = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = dt.getUTCDay() || 7;
+  dt.setUTCDate(dt.getUTCDate() + 4 - day);
+  const ys = new Date(Date.UTC(dt.getUTCFullYear(), 0, 1));
+  return dt.getUTCFullYear() + '-W' + String(Math.ceil(((dt - ys) / 864e5 + 1) / 7)).padStart(2, '0');
+}
+function weekRange(off) {
+  const now = new Date();
+  const mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7) + off * 7);
+  mon.setHours(0, 0, 0, 0);
+  const end = new Date(mon); end.setDate(mon.getDate() + 7);
+  return { start: mon, end };
+}
+function weekTrades(w) {
+  return closedTrades().filter(t => { const d = new Date(t.exitAt || t.entryAt); return d >= w.start && d < w.end; });
+}
+function renderWeekly() {
+  const w = weekRange(ui.wkOff), key = isoWeekKey(w.start);
+  const wt = weekTrades(w), st = computeStats(wt);
+  /* Baseline : moyenne des 4 semaines précédentes */
+  let bNet = 0, bC = 0, bW = 0, bL = 0, bGp = 0, bGl = 0;
+  for (let i = 1; i <= 4; i++) {
+    const bs = computeStats(weekTrades(weekRange(ui.wkOff - i)));
+    bNet += bs.net; bC += bs.count; bW += bs.wins; bL += bs.losses; bGp += bs.gp; bGl += bs.gl;
+  }
+  const bWr = (bW + bL) ? bW / (bW + bL) : null, bPf = bGl > 0 ? bGp / bGl : null, bT = bC / 4, bNetW = bNet / 4;
+  const delta = (v, base) => {
+    if (base == null || !isFinite(base) || !base) return '';
+    const d = (v - base) / Math.abs(base) * 100;
+    return `<small>${d >= 0 ? '▲' : '▼'} ${Math.abs(d).toFixed(0)} % vs 4 sem. préc.</small>`;
+  };
+  const wr = (st.wins + st.losses) ? st.wins / (st.wins + st.losses) : null;
+  const kpi = (lbl, val, cls, sub) => `<div class="wk-kpi"><span>${lbl}</span><b class="${cls}">${val}</b>${sub || ''}</div>`;
+  const sunday = new Date(w.end - 864e5);
+  $('wkLabel').textContent = `Semaine ${key.slice(5)} · ${String(w.start.getDate()).padStart(2, '0')} ${MOIS[w.start.getMonth()]} → ${String(sunday.getDate()).padStart(2, '0')} ${MOIS[sunday.getMonth()]}.`;
+  $('wkKpis').innerHTML =
+    kpi('P&L net', st.count ? money(st.net, { sign: true }) : '—', st.net > 0 ? 'pos' : st.net < 0 ? 'neg' : '', st.count ? delta(st.net, bNetW) : '') +
+    kpi('Trades clôturés', st.count, '', st.count ? delta(st.count, bT) : '') +
+    kpi('Win rate', wr == null ? '—' : pct(wr * 100), wr == null ? '' : wr >= .5 ? 'pos' : 'neg', wr != null && bWr != null ? `<small>4 sem. : ${pct(bWr * 100)}</small>` : '') +
+    kpi('Profit factor', st.pf == null ? (st.count && st.gl === 0 ? '∞' : '—') : (st.pf === Infinity ? '∞' : st.pf.toFixed(2)), st.pf != null && st.pf >= 1.25 ? 'pos' : st.pf != null && st.pf < 1 ? 'neg' : '', st.pf != null && bPf != null && isFinite(bPf) ? `<small>4 sem. : ${bPf.toFixed(2)}</small>` : '') +
+    kpi('Gain moyen', st.avgWin ? money(st.avgWin) : '—', st.avgWin ? 'pos' : '', '') +
+    kpi('Perte moyenne', st.avgLoss ? money(-st.avgLoss) : '—', st.avgLoss ? 'neg' : '', '') +
+    kpi('Meilleur trade', st.best ? money(calcPnl(st.best), { sign: true }) : '—', st.best ? 'pos' : '', st.best ? `<small>${esc(st.best.sym)} · ${esc(st.best.strategy || '—')}</small>` : '') +
+    kpi('Pire trade', st.worst ? money(calcPnl(st.worst), { sign: true }) : '—', st.worst ? 'neg' : '', st.worst ? `<small>${esc(st.worst.sym)} · ${esc(st.worst.strategy || '—')}</small>` : '');
+  const errs = wt.filter(t => (t.tags || []).length).length;
+  const sv = S.weekly[key] || {};
+  $('wkSaved').textContent = (S.weekly[key] ? 'Bilan enregistré le ' + new Date(S.weekly[key].ts).toLocaleDateString('fr-FR') : 'Bilan non encore enregistré') + ` · ${errs} trade(s) avec erreur taguée cette semaine`;
+  $('wkGood').value = sv.good || ''; $('wkBad').value = sv.bad || ''; $('wkAdjust').value = sv.adjust || '';
+  $('wkTodayBtn').style.display = ui.wkOff === 0 ? 'none' : '';
+}
+function saveWeekly() {
+  const key = isoWeekKey(weekRange(ui.wkOff).start);
+  const good = $('wkGood').value.trim(), bad = $('wkBad').value.trim(), adjust = $('wkAdjust').value.trim();
+  if (!good && !bad && !adjust) return toast('Les trois champs sont vides — rien à enregistrer.', 'err');
+  S.weekly[key] = Object.assign({}, S.weekly[key], { good, bad, adjust, ts: Date.now() });
+  save(); renderWeekly(); toast('Bilan de la semaine enregistré.');
+}
+function weeklyNote() {
+  const w = weekRange(ui.wkOff), key = isoWeekKey(w.start);
+  const wt = weekTrades(w), st = computeStats(wt);
+  if (!wt.length) return toast('Aucun trade clôturé cette semaine — rien à récapituler.', 'err');
+  const wr = (st.wins + st.losses) ? pct(st.wins / (st.wins + st.losses) * 100) : '—';
+  const lines = [`P&L net : ${money(st.net, { sign: true })} sur ${st.count} trade(s) clôturé(s) · win rate ${wr}` + (st.pf != null ? ` · PF ${st.pf.toFixed(2)}` : '')];
+  if (st.best) lines.push(`Meilleur trade : ${st.best.sym} ${money(calcPnl(st.best), { sign: true })} (${st.best.strategy || '—'})`);
+  if (st.worst) lines.push(`Pire trade : ${st.worst.sym} ${money(calcPnl(st.worst), { sign: true })} (${st.worst.strategy || '—'})`);
+  const errs = wt.filter(t => (t.tags || []).length);
+  if (errs.length) lines.push(`Erreurs taguées : ${errs.length} trade(s) — ${[...new Set(errs.flatMap(t => t.tags))].join(', ')}`);
+  const sv = S.weekly[key] || {};
+  const obs = [];
+  if (sv.good) obs.push('Bien fait : ' + sv.good);
+  if (sv.bad) obs.push('À corriger : ' + sv.bad);
+  if (sv.adjust) obs.push('Ajustement : ' + sv.adjust);
+  S.notes.push({
+    id: uid(), date: toLocalInput(ui.wkOff === 0 ? new Date() : new Date(w.end - 864e5)).slice(0, 10),
+    mood: '', title: `Bilan ${key.replace('-W', ' — semaine ')}`,
+    body: lines.join('\n') + (obs.length ? '\n\n' + obs.join('\n') : ''), lesson: sv.adjust || ''
+  });
+  save(); renderJournal(); toast('Entrée de journal créée à partir du bilan.');
 }
 
 /* ---------- Rendu : trades ---------- */
@@ -1548,7 +2047,7 @@ function renderTrades() {
       <td class="mono">${price(t.entry)} → ${open ? '<span class="faint">—</span>' : price(t.exit)}</td>
       <td class="mono muted">${(() => { const lf = lotFactor((t.sym || '').toUpperCase(), t.market); const m = t.qtyMode || 'units'; if (m === 'lots' && lf > 1) return num(t.qty / lf, 2) + ' <span class="faint">lot' + (t.qty / lf > 1 ? 's' : '') + '</span> · ' + num(t.qty, 0); if (lf > 1) return num(t.qty, 0) + ' <span class="faint">u</span> ≈ ' + num(t.qty / lf, 2) + ' lot' + (t.qty / lf > 1 ? 's' : ''); return num(t.qty, 4); })()}</td>
       <td class="mono">${r == null ? '<span class="faint">—</span>' : `<span class="${r >= 0 ? 'pos' : 'neg'}">${r >= 0 ? '+' : '−'}${Math.abs(r).toFixed(1)}R</span>`}</td>
-      <td class="mono" style="font-weight:500">${open ? `<span class="badge open">EN COURS</span>` : `<span class="${p >= 0 ? 'pos' : 'neg'}">${money(p, { sign: true })}</span>${t.pnlOverride != null ? '<span class="pnl-m" title="P&L saisi manuellement — prioritaire sur le calcul automatique">M</span>' : ''}`}</td>
+      <td class="mono" style="font-weight:500">${open ? `<span class="badge open">EN COURS</span>` : `<span class="${p >= 0 ? 'pos' : 'neg'}">${money(p, { sign: true })}</span>${t.pnlOverride != null ? '<span class="pnl-m" title="P&L saisi manuellement — prioritaire sur le calcul automatique">M</span>' : ''}${(t.partials && t.partials.length) ? `<span class="pnl-m" title="Géré avec ${t.partials.length} clôture${t.partials.length > 1 ? 's' : ''} partielle${t.partials.length > 1 ? 's' : ''} — détails dans le formulaire">PP${t.partials.length}</span>` : ''}`}</td>
       <td class="muted">${esc(t.strategy || '—')}</td>
       <td>${t.mood ? `<span class="mood-tag"><i style="background:${MOODS[t.mood] || 'var(--muted)'}"></i>${esc(t.mood)}</span>` : '<span class="faint">—</span>'}</td>
       <td style="text-align:right">
@@ -1564,46 +2063,55 @@ function renderTrades() {
 
 /* ---------- Rendu : statistiques ---------- */
 function barRowHtml(o) {
-  const mx = Math.max(1, ...o.all.map(x => Math.abs(x.net)));
-  const w = Math.abs(o.net) / mx * 49;
-  const bar = o.net >= 0 ? `<div class="half"><i style="width:${w}%;background:var(--pos)"></i></div><div class="mid"></div><div class="half n"></div>`
+  const useR = ui.moneyMode === 'r' && o.rN > 0;
+  const val = useR ? o.rSum : o.net;
+  const mx = Math.max(1, ...o.all.map(x => (ui.moneyMode === 'r' && x.rN > 0 ? x.rSum : x.net)));
+  const w = Math.abs(val) / mx * 49;
+  const bar = val >= 0 ? `<div class="half"><i style="width:${w}%;background:var(--pos)"></i></div><div class="mid"></div><div class="half n"></div>`
     : `<div class="half n"></div><div class="mid"></div><div class="half"><i style="width:${w}%;background:var(--neg)"></i></div>`;
   const wr = (o.wins + o.losses) ? pct(o.wins / (o.wins + o.losses) * 100) : '—';
   const pf = o.gl > 0 ? (o.gp / o.gl) : (o.gp > 0 ? Infinity : null);
   const av = o.rN ? (o.rSum / o.rN) : null;
-  const extra = [pf != null ? 'PF ' + (pf === Infinity ? '∞' : pf.toFixed(2)) : null,
-                 av != null ? (av >= 0 ? '+' : '−') + Math.abs(av).toFixed(2) + 'R moy' : null].filter(Boolean).join(' · ');
+  const extra = useR
+    ? [av != null ? (av >= 0 ? '+' : '−') + Math.abs(av).toFixed(2) + 'R moy' : null].filter(Boolean).join(' · ')
+    : [pf != null ? 'PF ' + (pf === Infinity ? '∞' : pf.toFixed(2)) : null,
+       av != null ? (av >= 0 ? '+' : '−') + Math.abs(av).toFixed(2) + 'R moy' : null].filter(Boolean).join(' · ');
+  const valTxt = useR ? `${val >= 0 ? '+' : '−'}${Math.abs(val).toFixed(1)}R` : money(val, { sign: true, dec: 0 });
   return `<div class="brow">
     <div class="bl">${esc(o.label)}<small>${o.count} trade${o.count > 1 ? 's' : ''}${extra ? ' · ' + extra : ''}</small></div>
     <div class="splitbar">${bar}</div>
-    <div class="br ${o.net >= 0 ? 'pos' : 'neg'}">${money(o.net, { sign: true, dec: 0 })}<small>WR ${wr}</small></div>
+    <div class="br ${val >= 0 ? 'pos' : 'neg'}">${valTxt}<small>WR ${wr}</small></div>
     <div></div></div>`;
 }
 function renderStats() {
   const c = closedTrades();
   const st = computeStats(c);
-  $('statsMeta').textContent = `${st.count} trades clôturés · capital initial ${money(S.settings.capital)} · performance nette ${money(st.net, { sign: true })}`;
+  const useR = ui.moneyMode === 'r';
+  const rWithStop = c.filter(t => calcR(t) != null).length;
+  $('statsMeta').textContent = `${st.count} trades clôturés · capital initial ${money(S.settings.capital)} · performance nette ${money(st.net, { sign: true })}` + (useR ? ' · affichage en R-multiples cumulés' : '');
 
   const aggHtml = (elId, metaId, list, keyFn, nameFn) => {
-    const ag = aggregate(list, keyFn).sort((a, b) => b.net - a.net);
-    $(metaId).textContent = ag.length + ' entrées';
+    const ag = aggregate(list, keyFn).sort((a, b) => (useR ? (b.rSum || 0) - (a.rSum || 0) : b.net - a.net));
+    $(metaId).textContent = ag.length + ' entrées' + (useR ? ' · R cumulé sur ' + rWithStop + '/' + c.length + ' trades (stop défini)' : '');
     $(elId).innerHTML = ag.map(o => barRowHtml({ ...o, label: nameFn(o.key), all: ag })).join('') ||
       '<div class="empty-state" style="border:none">Pas de données.</div>';
   };
   aggHtml('byAsset', 'metaAsset', c, t => t.sym, k => k);
   aggHtml('byStrategy', 'metaStrat', c, t => t.strategy || 'Non classée', k => k);
 
+  const dayVal = o => (useR && o.rN > 0) ? o.rSum : o.net;
+  const fmtV = v => useR ? (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(1) + 'R' : money(v, { sign: true, dec: 0 });
   const wk = aggregate(c, t => (new Date(t.exitAt).getDay() + 6) % 7);
-  const wkArr = [0,1,2,3,4,5,6].map(i => wk.find(o => o.key === i) || { key: i, net: 0 });
-  const wkMax = Math.max(1, ...wkArr.map(o => Math.abs(o.net)));
+  const wkArr = [0,1,2,3,4,5,6].map(i => wk.find(o => o.key === i) || { key: i, net: 0, rSum: 0, rN: 0 });
+  const wkMax = Math.max(1, ...wkArr.map(o => Math.abs(dayVal(o))));
   const colH = 82;
   $('byWeekday').innerHTML = wkArr.map(o => {
-    const h = Math.abs(o.net) / wkMax * colH;
+    const v = dayVal(o), h = Math.abs(v) / wkMax * colH;
     return `<div class="wk-col">
-      <div class="wk-top"><i style="height:${o.net > 0 ? h : 0}px"></i></div>
+      <div class="wk-top"><i style="height:${v > 0 ? h : 0}px"></i></div>
       <div class="wk-mid"></div>
-      <div class="wk-bot"><i style="height:${o.net < 0 ? h : 0}px"></i></div>
-      <div class="wk-lbl">${JOURS[o.key]}<b class="${o.net > 0 ? 'pos' : o.net < 0 ? 'neg' : 'faint'}">${o.net ? money(o.net, { sign: true, dec: 0 }) : '—'}</b></div>
+      <div class="wk-bot"><i style="height:${v < 0 ? h : 0}px"></i></div>
+      <div class="wk-lbl">${JOURS[o.key]}<b class="${v > 0 ? 'pos' : v < 0 ? 'neg' : 'faint'}">${v ? fmtV(v) : '—'}</b></div>
     </div>`;
   }).join('');
 
@@ -1638,8 +2146,102 @@ function renderStats() {
     ${kv('Gain moyen', money(st.avgWin, { sign: true }))}${kv('Perte moyenne', money(-st.avgLoss))}
     ${kv('Frais cumulés', money(st.fees))}${kv('Trades / mois (moy.)', (st.count / Math.max(1, monthsSpan(c))).toFixed(1))}
   </div>`;
-  renderAdvanced(); renderHours(); renderErrors();
+  renderAdvanced(); renderHours(); renderErrors(); renderMfe(); renderEdge(); renderRRStats();
 }
+
+/* ---------- v5 : panel 12 — RR théorique vs réalisé ---------- */
+function renderRRStats() {
+  const el = $('rrStatsBody');
+  const c = closedTrades();
+  const rows = c.map(t => { const risk = initialRisk(t); return risk && risk > 0 ? { t, risk, th: rrTheo(t), r: calcR(t), pnl: calcPnl(t), agg: partialsSum(t) } : null; }).filter(Boolean).filter(x => x.r != null);
+  const withPart = rows.filter(x => x.agg.n > 0);
+  $('metaRR').textContent = rows.length + ' trades avec risque initial défini · ' + withPart.length + ' avec prises partielles';
+  if (!rows.length) {
+    el.innerHTML = '<div class="empty-state" style="border:none">Renseignez l’entrée, le stop et la sortie de vos trades : cette section mesure le RR théorique (immuable) contre le RR réellement encaissé, l’efficacité de vos prises partielles et leur coût d’opportunité.</div>';
+    return;
+  }
+  const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : null;
+  const withTh = rows.filter(x => x.th != null);
+  const noPart = rows.filter(x => !x.agg.n);
+  const avgTh = avg(withTh.map(x => x.th));
+  const avgR = avg(rows.map(x => x.r));
+  const avgGap = avg(withTh.map(x => x.th - x.r));
+  const capture = avg(withTh.filter(x => x.th > 0).map(x => Math.max(0, x.r) / x.th));
+  const avgPctPart = avg(withPart.map(x => x.agg.closedPct));
+  const kv = (a, b, cls = '') => `<div class="mix-kv"><span>${a}</span><b class="${cls}">${b}</b></div>`;
+  /* Distribution des RR réalisés */
+  const bks = [
+    { l: '≤ −1', f: r => r <= -1, c: 'var(--neg)' },
+    { l: '−1 / 0', f: r => r > -1 && r < 0, c: 'var(--neg)' },
+    { l: '0 / 1', f: r => r >= 0 && r < 1, c: 'rgba(53,224,161,.45)' },
+    { l: '1 / 2', f: r => r >= 1 && r < 2, c: 'var(--pos)' },
+    { l: '2 / 3', f: r => r >= 2 && r < 3, c: 'var(--pos)' },
+    { l: '3 / 4', f: r => r >= 3 && r < 4, c: 'var(--pos)' },
+    { l: '≥ 4', f: r => r >= 4, c: 'var(--pos)' }
+  ];
+  const counts = bks.map(b => rows.filter(x => b.f(x.r)).length);
+  const rMax = Math.max(1, ...counts);
+  /* Évolution mensuelle du RR réalisé moyen */
+  const byM = new Map();
+  rows.forEach(x => { const d = new Date(x.t.exitAt || x.t.entryAt); if (isNaN(d)) return; const k = d.getFullYear() * 12 + d.getMonth(); if (!byM.has(k)) byM.set(k, []); byM.get(k).push(x.r); });
+  const months = [...byM.entries()].sort((a, b) => a[0] - b[0]).slice(-12)
+    .map(([k, l]) => ({ k, n: l.length, avg: l.reduce((s, v) => s + v, 0) / l.length }));
+  const mxM = Math.max(1, ...months.map(o => Math.abs(o.avg)));
+  /* Comparaison par méthode de prise partielle (% de la 1re clôture) */
+  const fpct = t => { const p = (t.partials || [])[0]; const i = initialOf(t); return p && p.qty != null && i.qty ? p.qty / i.qty * 100 : null; };
+  const mkRow = (label, l) => {
+    const n = l.length;
+    const wins = l.filter(x => x.pnl > 0).length, losses = l.filter(x => x.pnl < 0).length;
+    const aTh = avg(l.filter(x => x.th != null).map(x => x.th));
+    const aR = avg(l.map(x => x.r));
+    const aGap = avg(l.filter(x => x.th != null).map(x => x.th - x.r));
+    const netT = n ? l.reduce((s, x) => s + x.pnl, 0) / n : 0;
+    return { label, n, wr: (wins + losses) ? pct(wins / (wins + losses) * 100) : '—', aTh, aR, aGap, netT };
+  };
+  const mrows = [
+    mkRow('Sans prise partielle', rows.filter(x => !x.agg.n)),
+    mkRow('1re prise ≤ 20 %', rows.filter(x => x.agg.n && fpct(x.t) != null && fpct(x.t) <= 20)),
+    mkRow('1re prise 20–40 %', rows.filter(x => x.agg.n && fpct(x.t) > 20 && fpct(x.t) <= 40)),
+    mkRow('1re prise 40–60 %', rows.filter(x => x.agg.n && fpct(x.t) > 40 && fpct(x.t) <= 60)),
+    mkRow('1re prise > 60 %', rows.filter(x => x.agg.n && fpct(x.t) > 60))
+  ].filter(r => r.n > 0);
+  const mTable = `
+    <table class="rr-table"><thead><tr><th>Méthode — % du volume de la 1re prise partielle</th><th>Trades</th><th>WR</th><th>RR théo moy</th><th>RR réalisé moy</th><th>Écart moy</th><th>P&amp;L net / trade</th></tr></thead><tbody>
+    ${mrows.map(r => `<tr>
+      <td>${esc(r.label)}${r.n < 15 ? '<span class="pnl-m" title="Échantillon faible — tendance indicative uniquement">n faible</span>' : ''}</td>
+      <td class="mono">${r.n}</td><td class="mono muted">${r.wr}</td>
+      <td class="mono">${r.aTh == null ? '—' : num(r.aTh, 2) + 'R'}</td>
+      <td class="mono ${r.aR == null ? '' : r.aR >= 0 ? 'pos' : 'neg'}">${r.aR == null ? '—' : fmtR(r.aR)}</td>
+      <td class="mono muted">${r.aGap == null ? '—' : fmtR(r.aGap)}</td>
+      <td class="mono ${r.netT >= 0 ? 'pos' : 'neg'}">${money(r.netT, { sign: true })}</td></tr>`).join('')}
+    </tbody></table>`;
+  const smallN = mrows.some(r => r.n < 15);
+  el.innerHTML = `
+    <div class="rr-stats">
+      <div class="kv-list">
+        ${kv('RR théorique moyen', avgTh == null ? '—' : '1 : ' + num(avgTh, 2), 'acc')}
+        ${kv('RR réalisé moyen', fmtR(avgR), avgR >= 0 ? 'pos' : 'neg')}
+        ${kv('Écart moyen (théorique − réalisé)', fmtR(avgGap))}
+        ${kv('Capture du scénario théorique', capture == null ? '—' : pct(capture * 100))}
+        ${kv('Trades avec prises partielles', withPart.length + ' / ' + rows.length + ' (' + pct(withPart.length / rows.length * 100) + ')')}
+        ${kv('% moyen du volume clôturé partiellement', avgPctPart == null ? '—' : pct(avgPctPart))}
+        ${kv('Profit moyen — avec prises partielles', (withPart.length ? money(avg(withPart.map(x => x.pnl)), { sign: true }) : '—') + ' · ' + withPart.length + ' trade' + (withPart.length > 1 ? 's' : ''), withPart.length && avg(withPart.map(x => x.pnl)) >= 0 ? 'pos' : 'neg')}
+        ${kv('Profit moyen — sans prise partielle', (noPart.length ? money(avg(noPart.map(x => x.pnl)), { sign: true }) : '—') + ' · ' + noPart.length + ' trade' + (noPart.length > 1 ? 's' : ''), noPart.length && avg(noPart.map(x => x.pnl)) >= 0 ? 'pos' : 'neg')}
+      </div>
+      <div class="rr-stats-r">
+        <div class="mfe-sub">Distribution des RR réalisés (profit net ÷ risque initial)</div>
+        <div class="rchart">${counts.map((n, i) => `<div class="r-col"><b>${n || ''}</b><i style="height:${n / rMax * 100}px;background:${bks[i].c}"></i></div>`).join('')}</div>
+        <div class="r-lbl">${bks.map(b => `<span>${b.l}</span>`).join('')}</div>
+        ${months.length >= 2 ? `<div class="mfe-sub" style="margin-top:16px">RR réalisé moyen par mois</div>
+        <div class="rchart">${months.map(o => `<div class="r-col" title="${MOIS_FULL[o.k % 12]} ${Math.floor(o.k / 12)} — ${fmtR(o.avg)} sur ${o.n} trade${o.n > 1 ? 's' : ''}"><b>${fmtR(o.avg, 1).replace(/R$/, '')}</b><i style="height:${Math.abs(o.avg) / mxM * 100}px;background:${o.avg >= 0 ? 'var(--pos)' : 'var(--neg)'}"></i></div>`).join('')}</div>
+        <div class="r-lbl">${months.map(o => `<span>${MOIS[o.k % 12]} ${String(Math.floor(o.k / 12)).slice(2)}</span>`).join('')}</div>` : ''}
+      </div>
+    </div>
+    <div class="mfe-sub" style="padding:16px 18px 0">Méthodes de prise partielle — quelle espérance de gain ?</div>
+    <div class="rr-table-wrap">${mTable}</div>
+    <div class="rr-note">Le RR réalisé intègre toutes les clôtures (partielles + solde final), nettes de frais, rapportées au risque initial. Un écart théorique − réalisé positif est la norme dès lors que des prises partielles sécurisent le profit : c’est un arbitrage de gestion, pas une faute. Comparez les méthodes uniquement avec des échantillons suffisants${smallN ? ' — certains groupes comptent moins de 15 trades (marqués « n faible ») : tendances indicatives uniquement' : ''}.</div>`;
+}
+
 function monthsSpan(c) {
   if (!c.length) return 1;
   const a = new Date(c[0].exitAt), b = new Date(c[c.length - 1].exitAt);
@@ -1648,6 +2250,7 @@ function monthsSpan(c) {
 
 /* ---------- Rendu : journal ---------- */
 function renderJournal() {
+  renderWeekly();
   const notes = [...S.notes].sort((a, b) => b.date.localeCompare(a.date));
   $('timeline').innerHTML = notes.map(n => {
     const d = new Date(n.date + 'T12:00');
@@ -1830,7 +2433,7 @@ function openTradeDrawer(trade, closing = false) {
   $('tSym').value = t.sym || ''; $('tMarket').value = t.market || 'Forex';
   const lfE = lotFactor((t.sym || '').toUpperCase(), t.market || 'Forex');
   const qm = t.qtyMode || (t.qty != null ? 'units' : 'lots');
-  $('tQtyMode').value = qm;
+  $('tQtyMode').value = qm; ui.pQtyMode = qm;
   $('tQty').value = t.qty == null ? '' : (qm === 'lots' && lfE > 1 ? +(t.qty / lfE).toFixed(6) : t.qty);
   $('tStrategy').value = t.strategy || '';
   $('tEntryAt').value = t.entryAt || toLocalInput(new Date());
@@ -1838,9 +2441,21 @@ function openTradeDrawer(trade, closing = false) {
   $('tTP').value = t.tp ?? ''; $('tExitAt').value = t.exitAt || '';
   $('tExit').value = t.exit ?? ''; $('tFees').value = t.fees ?? '';
   $('tPnlOv').value = t.pnlOverride ?? '';
+  $('tHigh').value = t.high ?? ''; $('tLow').value = t.low ?? '';
   $('tMood').value = t.mood || ''; $('tNotes').value = t.notes || '';
   ui.formTags = new Set(t.tags || []);
   renderTags();
+  /* v5 — clôtures partielles : copie de travail + verrouillage si géré */
+  ui.formPartials = (t.partials || []).map(p => ({ ...p }));
+  const managed = !!(t.managed || (t.partials && t.partials.length));
+  ui.formManaged = managed;
+  $('tEntry').disabled = managed; $('tQty').disabled = managed;
+  $('tEntryLbl').textContent = managed ? "Prix d'entrée — initial (verrouillé)" : "Prix d'entrée *";
+  $('tQtyLbl').textContent = managed ? 'Taille — initiale (verrouillée)' : 'Taille *';
+  $('tStopLbl').textContent = managed ? 'Stop loss (actuel)' : 'Stop loss';
+  $('tTPLbl').textContent = managed ? 'Take profit (actuel)' : 'Take profit (objectif)';
+  $('tLockHint').style.display = managed ? 'flex' : 'none';
+  renderPartials();
   $('tRiskPct').value = S.settings.riskPct ?? '';
   $('sizerHint').style.display = 'none';
   setDir(t.dir || 'long');
@@ -1882,14 +2497,211 @@ function updatePnlOvHint() {
   const hint = $('pnlOvHint');
   if ($('tPnlOv').value.trim() === '') { hint.style.display = 'none'; return; }
   const auto = calcPnlAuto(readForm());
+  const hasP = ui.formPartials.some(p => p.price != null && p.qty != null);
   hint.style.display = 'flex';
   hint.querySelector('i').style.background = 'var(--accent)';
   hint.querySelector('span').textContent = auto == null
     ? 'Calcul auto impossible (prix de sortie manquant) — la valeur saisie sert de P&L final.'
-    : `Calcul auto : ${money(auto, { sign: true })} — la valeur saisie la remplace partout (résultat net final, frais et swaps inclus).`;
+    : `Calcul auto${hasP ? ' (clôtures partielles incluses)' : ''} : ${money(auto, { sign: true })} — la valeur saisie la remplace partout (résultat net final, frais et swaps inclus).`;
 }
 function renderTags() {
   $('tTags').innerHTML = ERROR_TAGS.map(g => `<span class="chip ${ui.formTags.has(g) ? 'on' : ''}" data-tag="${g}">${g}</span>`).join('');
+}
+
+/* ================================================================
+   v5 — ÉDITION DES CLÔTURES PARTIELLES & ANALYSE RR DU DRAWER
+   ================================================================ */
+/* Lit les lignes du formulaire → met à jour ui.formPartials (qty en unités) */
+function collectPartials(modeOverride) {
+  const mode = modeOverride || $('tQtyMode').value;
+  const lf = lotFactor($('tSym').value.trim().toUpperCase() || '?', $('tMarket').value);
+  document.querySelectorAll('#tPartials .p-row').forEach(row => {
+    const p = ui.formPartials.find(x => x.id === row.dataset.pid);
+    if (!p) return;
+    const n = k => { const el = row.querySelector(`[data-pf="${k}"]`); const v = el ? el.value.trim() : ''; return v === '' ? null : parseFloat(v); };
+    p.at = row.querySelector('[data-pf="at"]') ? row.querySelector('[data-pf="at"]').value : '';
+    p.price = n('price');
+    const q = n('qty');
+    p.qty = q == null ? null : (mode === 'lots' ? q * lf : q);
+    p.fees = n('fees');
+    p.pnlOv = n('pnlOv');
+  });
+}
+/* Partielles valides (prix + volume) — prêtes à être stockées */
+function formPartialsClean() {
+  collectPartials();
+  return ui.formPartials
+    .filter(p => p.price != null && isFinite(p.price) && p.price > 0 && p.qty != null && isFinite(p.qty) && p.qty > 0)
+    .map(p => ({ id: p.id, at: p.at || '', price: p.price, qty: p.qty, fees: p.fees || 0, pnlOv: p.pnlOv != null && isFinite(p.pnlOv) ? p.pnlOv : null }));
+}
+function renderPartials() {
+  const wrap = $('tPartials');
+  const mode = $('tQtyMode').value;
+  const lf = lotFactor($('tSym').value.trim().toUpperCase() || '?', $('tMarket').value);
+  wrap.innerHTML = ui.formPartials.map(p => {
+    const qd = p.qty == null ? '' : (mode === 'lots' && lf > 1 ? +(p.qty / lf).toFixed(6) : p.qty);
+    return `<div class="p-row" data-pid="${p.id}">
+      <div class="p-grid">
+        <div class="f-field"><label>Date &amp; heure de clôture</label><input type="datetime-local" data-pf="at" value="${esc(p.at || '')}"></div>
+        <div class="f-field"><label>Prix de clôture</label><input type="number" step="any" min="0" data-pf="price" value="${p.price ?? ''}" placeholder="1,0860"></div>
+        <div class="f-field"><label>Volume clôturé (${mode === 'lots' ? 'lots' : 'unités'})</label><input type="number" step="any" min="0" data-pf="qty" value="${qd}" placeholder="${mode === 'lots' ? '0,05' : '5000'}"></div>
+      </div>
+      <div class="p-grid2">
+        <div class="f-field"><label>Frais de cette clôture (facultatif)</label><input type="number" step="any" min="0" data-pf="fees" value="${p.fees ?? ''}" placeholder="0"></div>
+        <div class="f-field"><label>P&amp;L net saisi (facultatif)</label><input type="number" step="any" data-pf="pnlOv" value="${p.pnlOv ?? ''}" placeholder="Auto : prix × volume"></div>
+        <button type="button" class="ibtn del" data-action="del-partial" data-pid="${p.id}" title="Supprimer cette clôture partielle">${ic('trash')}</button>
+      </div>
+      <div class="mood-preview p-info" style="display:none"><i></i><span></span></div>
+    </div>`;
+  }).join('') || '<div class="faint" style="font-size:12px;padding:2px 0 4px">Aucune clôture partielle — position gérée en une seule sortie (section Sortie ci-dessus).</div>';
+  updatePartialUI();
+}
+/* Infos live par ligne + barre de répartition clôturé / restant */
+function updatePartialUI() {
+  const t = readForm();
+  const risk = initialRisk(t);
+  document.querySelectorAll('#tPartials .p-row').forEach(row => {
+    const p = ui.formPartials.find(x => x.id === row.dataset.pid);
+    const info = row.querySelector('.p-info');
+    if (!p || !info) return;
+    if (p.price == null || p.qty == null || !t.qty) { info.style.display = 'none'; return; }
+    const pnl = partialPnl(t, p);
+    const pv = p.qty / t.qty * 100;
+    const r = risk ? pnl / risk : null;
+    info.style.display = 'flex';
+    info.querySelector('i').style.background = pnl >= 0 ? 'var(--pos)' : 'var(--neg)';
+    info.querySelector('span').innerHTML =
+      `<b>${pct(pv, 2)}</b> du volume initial · <b class="${pnl >= 0 ? 'pos' : 'neg'}">${money(pnl, { sign: true })}</b>` +
+      (r != null ? ` · <b class="${r >= 0 ? 'pos' : 'neg'}">${fmtR(r)}</b> du risque initial` : '');
+  });
+  const split = $('tPartSplit');
+  const list = t.partials || [];
+  if (!list.length) { split.innerHTML = ''; split.style.display = 'none'; return; }
+  split.style.display = 'block';
+  const tot = t.qty || 0;
+  const closedQ = list.reduce((s, p) => s + (p.qty || 0), 0);
+  const over = tot > 0 && closedQ > tot * (1 + 1e-6);
+  const cp = tot ? Math.min(100, closedQ / tot * 100) : 0;
+  const rp = 100 - cp;
+  const full = tot > 0 && closedQ >= tot * (1 - 1e-6);
+  split.innerHTML = `
+    <div class="p-split-lbl"><span>Clôturé : <b class="acc">${pct(cp, 2)}</b> · ${num(closedQ, 4)} u</span><span>${full ? 'Position intégralement clôturée' : `Restant : <b>${pct(rp, 2)}</b> · ${num(Math.max(0, tot - closedQ), 4)} u`}</span></div>
+    <div class="p-split-bar"><i class="c" style="width:${cp}%"></i><i class="r" style="width:${rp}%"></i></div>
+    ${over ? '<div class="p-warn">Attention — la somme des clôtures partielles dépasse la taille initiale : corrigez les volumes.</div>' : ''}
+    ${(!over && !full && !isClosed(t)) ? '<div class="mood-preview" style="margin-top:9px"><i style="background:var(--accent)"></i><span>Le volume restant sera clôturé via « Prix de sortie » (section Sortie) — aucun double comptage.</span></div>' : ''}
+    ${full && t.exit != null ? '<div class="mood-preview" style="margin-top:9px"><i style="background:var(--accent)"></i><span>Position déjà intégralement clôturée par les partielles — le prix de sortie final est ignoré par le calcul.</span></div>' : ''}`;
+}
+/* Boîte comparative RR théorique vs réalisé (détails du trade) */
+function renderRRBox() {
+  const box = $('rrBox');
+  if (!box) return;
+  const t = readForm();
+  const i = initialOf(t);
+  const spec = resolveSpec(t.sym || '?', t.market);
+  const risk = initialRisk(t);
+  const th = rrTheo(t);
+  const agg = partialsSum(t);
+  const closed = isClosed(t);
+  const pnl = calcPnl(t);
+  const rrReal = risk && risk > 0 && pnl != null ? pnl / risk : null;
+  if (risk == null && !agg.n) {
+    box.innerHTML = '<div class="faint" style="font-size:12px;padding:4px 0 8px">Renseignez l’entrée et le stop pour activer l’analyse Risk/Reward : risque initial, RR théorique immuable, RR réalisé et coût d’opportunité des prises partielles.</div>';
+    return;
+  }
+  const kv = (a, b, cls = '') => `<div class="mix-kv"><span>${a}</span><b class="${cls}">${b}</b></div>`;
+  let bars = '';
+  if (th != null) {
+    const mx = Math.max(th, Math.abs(rrReal || 0), 1) * 1.06;
+    const w = v => Math.max(0, Math.min(100, Math.abs(v) / mx * 100));
+    const mk = rrReal != null ? `<span class="mk" style="left:${w(rrReal)}%"></span>` : '';
+    bars = `<div class="rr-bars">
+      <div class="rr-bar-row"><span class="lbl">Théorique</span><div class="rr-bar"><i style="width:${w(th)}%;background:var(--accent)"></i>${mk}</div><b>${num(th, 2)}R</b></div>
+      <div class="rr-bar-row"><span class="lbl">Réalisé</span><div class="rr-bar"><i style="width:${rrReal == null ? 0 : w(rrReal)}%;background:${rrReal != null && rrReal < 0 ? 'var(--neg)' : 'var(--pos)'}"></i></div><b class="${rrReal == null ? 'faint' : rrReal >= 0 ? 'pos' : 'neg'}">${rrReal == null ? 'en cours' : fmtR(rrReal)}</b></div>
+      <div class="rr-legend">Repère blanc = niveau réellement encaissé, rapporté au scénario théorique</div>
+    </div>`;
+  }
+  const rows = [];
+  rows.push(kv('Risque initial (immuable)', risk != null ? money(risk) : '—'));
+  if (th != null) rows.push(kv('RR théorique (immuable)', '1 : ' + num(th, 2) + ' · ' + fmtR(th), 'acc'));
+  if (agg.n) {
+    rows.push(kv('Clôturé partiellement', pct(agg.closedPct, 2) + ` — ${agg.n} clôture${agg.n > 1 ? 's' : ''}`));
+    rows.push(kv('Restant avant clôture finale', agg.full ? '0 % — intégralement clôturé' : pct(agg.remPct, 2) + ` — ${num(agg.remQty, 4)} u`));
+  }
+  if (pnl != null) rows.push(kv('Profit total réalisé (net, frais inclus)', money(pnl, { sign: true }), pnl >= 0 ? 'pos' : 'neg'));
+  if (rrReal != null) rows.push(kv('RR réalisé', fmtR(rrReal), rrReal >= 0 ? 'pos' : 'neg'));
+  if (closed && th != null && rrReal != null && risk) {
+    const oppR = th - rrReal;
+    rows.push(kv('Coût d’opportunité (scénario contrefactuel)', fmtR(oppR) + (oppR > 0.005 ? '' : ' · gestion ≥ scénario'), oppR > 0.005 ? 'neg' : 'pos'));
+    rows.push(kv('Écart financier hypothétique', money(oppR * risk, { sign: true }), oppR > 0.005 ? 'neg' : 'pos'));
+  }
+  if (!closed && agg.n && th != null && risk) {
+    const proj = agg.pnl + toAcct((i.tp - i.entry) * agg.remQty * dirMul(t), spec.q) - (t.fees || 0);
+    rows.push(kv('Projection — restant au TP initial', money(proj, { sign: true }) + ' · ' + fmtR(proj / risk), 'acc'));
+  }
+  if (!closed && agg.n && calcRisk(t) != null) rows.push(kv('Risque résiduel (stop actuel × volume restant)', money(calcRisk(t))));
+  box.innerHTML = `
+    <div class="rr-init">
+      <div><span>Entrée initiale</span><b>${i.entry != null ? price(i.entry) : '—'}</b></div>
+      <div><span>Stop initial</span><b>${i.stop != null ? price(i.stop) : '—'}</b></div>
+      <div><span>TP initial</span><b>${i.tp != null ? price(i.tp) : '—'}</b></div>
+      <div><span>Taille initiale</span><b>${i.qty != null ? num(i.qty, 4) + ' u' : '—'}</b></div>
+      <div><span>Risque initial</span><b>${risk != null ? money(risk) : '—'}</b></div>
+      <div><span>RR théorique</span><b class="acc">${th != null ? '1 : ' + num(th, 2) : '—'}</b></div>
+    </div>
+    ${bars}
+    <div class="rr-kvs kv-list">${rows.join('')}</div>
+    <div class="mfe-note" style="margin-top:12px">${rrAnalysisHTML(t)}</div>`;
+}
+/* Analyse automatique de la qualité de gestion — ton neutre :
+   une sortie anticipée n'est jamais qualifiée d'erreur en soi. */
+function rrAnalysisHTML(t) {
+  const i = initialOf(t), risk = initialRisk(t), th = rrTheo(t);
+  const agg = partialsSum(t), closed = isClosed(t), pnl = calcPnl(t);
+  if (risk == null) return 'Renseignez l’entrée et le stop : l’analyse de gestion (répartition du volume, protection du capital, scénarios contrefactuels) s’activera automatiquement.';
+  const bits = [];
+  const dm = dirMul(t), spec = resolveSpec(t.sym || '?', t.market);
+  if (!agg.n) {
+    bits.push('Gestion en clôture unique — aucune prise partielle enregistrée.');
+    if (closed && th != null && t.exit != null && pnl != null) {
+      const nearTP = Math.abs(t.exit - i.tp) <= Math.abs(i.tp - i.entry) * 0.1;
+      bits.push(nearTP
+        ? `Objectif initial atteint : la position entière a été clôturée au voisinage du TP initial (rendement théorique ${fmtR(th)}).`
+        : `Clôture unique à ${fmtR(pnl / risk)} — le TP initial (${fmtR(th)}) n’a pas été atteint sur la totalité du volume.`);
+    }
+  } else {
+    const premQty = t.partials.reduce((s, p) => s + (p && p.qty != null && i.tp != null && p.price != null && ((dm > 0 && p.price < i.tp) || (dm < 0 && p.price > i.tp)) ? p.qty : 0), 0);
+    const premPct = agg.tot ? premQty / agg.tot * 100 : 0;
+    const avgPartR = agg.n && risk ? (agg.pnl / agg.n) / risk : null;
+    bits.push(`<b>Répartition :</b> ${pct(agg.closedPct, 2)} du volume initial clôturé en ${agg.n} prise${agg.n > 1 ? 's' : ''} partielle${agg.n > 1 ? 's' : ''}${premPct > 0 ? ` (dont ${pct(premPct, 2)} avant le TP initial, à ${fmtR(avgPartR)} en moyenne par clôture)` : ''} · ${agg.full ? 'le solde a été conservé jusqu’à la clôture finale' : pct(agg.remPct, 2) + ' encore conservé(s).'}`);
+    if (agg.pnl > 0) bits.push(`<b>Protection des bénéfices :</b> les clôtures partielles ont déjà encaissé ${money(agg.pnl, { sign: true })} (${fmtR(agg.pnl / risk)}), indépendamment de la suite du marché.`);
+    if (t.stop != null && i.stop != null && t.stop !== i.stop) {
+      const beOk = dm > 0 ? t.stop >= i.entry : t.stop <= i.entry;
+      const goodDir = dm > 0 ? t.stop > i.stop : t.stop < i.stop;
+      const resid = toAcct(Math.abs(t.entry - t.stop) * agg.remQty, spec.q);
+      if (beOk) bits.push(`<b>Capital protégé :</b> stop déplacé de ${price(i.stop)} à ${price(t.stop)}, au-delà de l’entrée — le volume restant ne présente plus de risque de perte en capital.`);
+      else if (goodDir) bits.push(`<b>Stop resserré :</b> de ${price(i.stop)} à ${price(t.stop)} — risque résiduel ramené à ${money(resid)} sur le volume restant.`);
+      else bits.push(`<b>Stop élargi :</b> de ${price(i.stop)} à ${price(t.stop)} — risque résiduel porté à ${money(resid)}, exposition supérieure au plan initial : à surveiller.`);
+    } else {
+      bits.push(`Stop initial conservé (${i.stop != null ? price(i.stop) : '—'}) — le risque est resté celui du plan d’origine.`);
+    }
+    if (closed && th != null && pnl != null) {
+      const oppR = th - pnl / risk, hyp = th * risk;
+      if (oppR > 0.005) {
+        bits.push(`<b>Scénario contrefactuel — pas une perte réelle :</b> en conservant l’intégralité jusqu’au TP initial, le profit aurait été ≈ ${money(hyp)} au lieu de ${money(pnl, { sign: true })} encaissés, soit ${fmtR(oppR)} de rendement non capté.`);
+      } else {
+        bits.push(`<b>Gestion supérieure au scénario théorique :</b> ${money(pnl, { sign: true })} encaissés contre ≈ ${money(hyp)} si tout avait été clôturé au TP initial — la gestion a ajouté ${fmtR(-oppR)}.`);
+      }
+      if (t.exit != null) {
+        const fullAtExit = toAcct((t.exit - i.entry) * agg.tot * dm, spec.q) - (t.fees || 0) - agg.fees;
+        bits.push(`Sans aucune prise partielle (position entière clôturée à ${price(t.exit)}) : ${money(fullAtExit, { sign: true })} (${fmtR(risk ? fullAtExit / risk : null)}).`);
+      }
+    } else if (!closed && i.tp != null) {
+      const proj = agg.pnl + toAcct((i.tp - i.entry) * agg.remQty * dm, spec.q) - (t.fees || 0);
+      bits.push(`Position en cours : si le volume restant atteint le TP initial, le profit total projeté serait ≈ ${money(proj, { sign: true })} (${fmtR(risk ? proj / risk : null)}).`);
+    }
+  }
+  bits.push('<span class="faint">Un RR réalisé inférieur au théorique traduit une sortie anticipée, pas une erreur en soi : la qualité d’une gestion se juge sur un échantillon complet de trades (Statistiques — panel Risk/Reward).</span>');
+  return bits.join('<br>');
 }
 function runSizer() {
   const t = readForm();
@@ -1945,10 +2757,31 @@ function updateCalc() {
   const stopDist = (t.entry != null && t.stop != null && t.stop !== '') ? Math.abs(t.entry - t.stop) : null;
   const rr = (stopDist > 0 && t.tp != null && t.tp !== '') ? Math.abs(t.tp - t.entry) / stopDist : null;
   $('calcRR').textContent = rr ? '1 : ' + rr.toFixed(1) : '—';
-  $('calcPnlLbl').textContent = t.pnlOverride != null ? 'P&L final (manuel)' : 'P&L si clôture';
+  $('calcPnlLbl').textContent = t.pnlOverride != null ? 'P&L final (manuel)' : (t.partials && t.partials.length ? 'P&L net réalisé' : 'P&L si clôture');
   const el = $('calcPnl');
   if (pnl == null) { el.textContent = 'position ouverte'; el.className = 'muted'; }
   else { el.textContent = money(pnl, { sign: true }) + (r != null ? `  (${r >= 0 ? '+' : '−'}${Math.abs(r).toFixed(1)}R)` : ''); el.className = pnl >= 0 ? 'pos' : 'neg'; }
+  /* Aperçu MAE / MFE en R à partir des extrêmes saisis */
+  const exH = parseFloat($('tHigh').value), exL = parseFloat($('tLow').value);
+  const hasH = $('tHigh').value.trim() !== '' && isFinite(exH), hasL = $('tLow').value.trim() !== '' && isFinite(exL);
+  const exHint = $('excHint');
+  const fR = v => (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(2) + 'R';
+  if (!hasH && !hasL) { exHint.style.display = 'none'; }
+  else if (t.entry == null || t.stop == null || t.entry === t.stop) {
+    exHint.style.display = 'flex';
+    exHint.querySelector('i').style.background = 'var(--accent)';
+    exHint.querySelector('span').textContent = 'Renseignez l\u2019entrée et le stop pour convertir ces extrêmes en R-multiples.';
+  } else {
+    const d = Math.abs(t.entry - t.stop);
+    const mfe = ui.formDir === 'long' ? (hasH ? (exH - t.entry) / d : null) : (hasL ? (t.entry - exL) / d : null);
+    const mae = ui.formDir === 'long' ? (hasL ? (t.entry - exL) / d : null) : (hasH ? (exH - t.entry) / d : null);
+    exHint.style.display = 'flex';
+    exHint.querySelector('i').style.background = 'var(--accent)';
+    exHint.querySelector('span').textContent = `Extrêmes en R — MFE : ${mfe == null ? '—' : fR(mfe)} · MAE : ${mae == null ? '—' : '−' + Math.abs(mae).toFixed(2) + 'R'} · analysé dans Statistiques 10.`;
+  }
+  /* v5 — clôtures partielles : infos live + boîte RR comparative */
+  updatePartialUI();
+  renderRRBox();
 }
 function readForm() {
   const v = id => $(id).value.trim();
@@ -1961,10 +2794,12 @@ function readForm() {
     qty: q == null ? null : (mode === 'lots' ? q * f : q),
     qtyMode: mode,
     entry: nn('tEntry'), stop: nn('tStop'), tp: nn('tTP'), exit: nn('tExit'),
+    high: nn('tHigh'), low: nn('tLow'),
     pnlOverride: nn('tPnlOv'),
     entryAt: v('tEntryAt'), exitAt: v('tExitAt'), fees: nn('tFees') || 0,
     strategy: v('tStrategy'), mood: v('tMood'), notes: v('tNotes'),
-    tags: [...ui.formTags]
+    tags: [...ui.formTags],
+    partials: formPartialsClean()
   };
 }
 function submitTrade() {
@@ -1973,15 +2808,31 @@ function submitTrade() {
   if (!t.qty || t.qty <= 0) return toast('La quantité doit être supérieure à 0.', 'err');
   if (t.entry == null) return toast('Le prix d’entrée est obligatoire.', 'err');
   if (!t.entryAt) return toast('La date d’entrée est obligatoire.', 'err');
-  if (isClosed(t) && !t.exitAt) return toast('Renseignez la date de sortie d’un trade clôturé.', 'err');
-  if (t.exit == null && t.pnlOverride == null) t.exitAt = '';
+  /* v5 — validation des clôtures partielles (aucun dépassement de volume) */
+  const totP = t.partials.reduce((s, p) => s + p.qty, 0);
+  if (t.partials.length && t.qty != null && totP > t.qty * (1 + 1e-6) + 1e-9)
+    return toast(`La somme des clôtures partielles (${num(totP, 4)}) dépasse la taille initiale (${num(t.qty, 4)}).`, 'err');
+  if (isClosed(t) && !t.exitAt) {
+    if (!t.partials.length) return toast('Renseignez la date de sortie d’un trade clôturé.', 'err');
+    const last = t.partials[t.partials.length - 1];
+    t.exitAt = last.at || t.entryAt || '';   // clôturé via partielles : date de la dernière clôture
+  }
+  if (t.exit == null && t.pnlOverride == null && !isClosed(t)) t.exitAt = '';
+  const initSnap = { entry: t.entry, stop: t.stop, tp: t.tp, qty: t.qty };
   if (ui.editTrade) {
     const i = S.trades.findIndex(x => x.id === ui.editTrade);
-    S.trades[i] = { ...S.trades[i], ...t };
+    const old = S.trades[i];
+    /* Trade déjà géré : le snapshot initial reste IMMUABLE (RR théorique
+       historique). Sinon, il est actualisé (correction de saisie). */
+    const managed = !!(old.managed || (old.partials && old.partials.length) || t.partials.length);
+    S.trades[i] = { ...old, ...t, managed,
+      initial: managed && old.initial && isFinite(old.initial.entry)
+        ? old.initial
+        : (managed ? { entry: old.entry, stop: old.stop, tp: old.tp, qty: old.qty } : initSnap) };
     toast('Trade mis à jour.');
   } else {
-    S.trades.push({ id: uid(), ...t });
-    toast('Trade enregistré' + (t.exit == null ? ' — position en cours.' : '.'));
+    S.trades.push({ id: uid(), ...t, managed: t.partials.length > 0, initial: initSnap });
+    toast(isClosed(t) ? 'Trade enregistré.' : 'Trade enregistré — position en cours.');
   }
   save(); checkGuardrailsPost(t); closeDrawers(); renderAll();
 }
@@ -2029,7 +2880,7 @@ function importData(file) {
       const d = JSON.parse(rd.result);
       if (!Array.isArray(d.trades)) throw 0;
       confirmDialog('Importer cette sauvegarde ?', `${d.trades.length} trades et ${(d.notes || []).length} notes remplaceront les données actuelles.`, () => {
-        S = { settings: Object.assign({}, DEFAULTS, d.settings || {}), trades: d.trades || [], notes: d.notes || [] };
+        S = { settings: Object.assign({}, DEFAULTS, d.settings || {}), trades: d.trades || [], notes: d.notes || [], weekly: d.weekly || {} };
         save(); renderAll(); toast('Données importées.');
       });
     } catch (e) { toast('Fichier invalide — import annulé.', 'err'); }
@@ -2040,16 +2891,20 @@ function importData(file) {
 /* ---------- Export / import CSV (Excel, courtiers) ---------- */
 function exportCSV() {
   const sep = ';';
-  const head = ['Date entrée', 'Date sortie', 'Symbole', 'Marché', 'Direction', 'Qté saisie', 'Mode', 'Qté (unités)', 'Facteur lot', 'Entrée', 'Stop', 'TP', 'Sortie', 'Frais', 'P&L', 'P&L manuel', 'R', 'Stratégie', 'État d’esprit', 'Erreurs', 'Notes'];
+  const head = ['Date entrée', 'Date sortie', 'Symbole', 'Marché', 'Direction', 'Qté saisie', 'Mode', 'Qté (unités)', 'Facteur lot', 'Entrée', 'Stop', 'TP', 'Sortie', 'Frais', 'P&L', 'P&L manuel', 'R', 'Plus haut atteint', 'Plus bas atteint', 'Stratégie', 'État d’esprit', 'Erreurs', 'Notes', 'RR théorique', 'RR réalisé', 'Clôtures partielles'];
   const rows = [...S.trades].sort((a, b) => new Date(a.entryAt) - new Date(b.entryAt)).map(t => {
     const lf = lotFactor((t.sym || '').toUpperCase(), t.market);
     const mode = t.qtyMode || 'units';
+    const ps = partialsSum(t);
+    const pTxt = ps.n ? `${ps.n} partielle${ps.n > 1 ? 's' : ''} · ${ps.closedPct.toFixed(1)}% du volume · restant ${ps.remPct.toFixed(1)}%` : '';
     return [
       t.entryAt || '', t.exitAt || '', t.sym, t.market || '', t.dir,
       mode === 'lots' ? +(t.qty / lf).toFixed(6) : t.qty, mode, t.qty, lf,
       t.entry ?? '', t.stop ?? '', t.tp ?? '', t.exit ?? '',
       t.fees || 0, calcPnl(t) ?? '', t.pnlOverride ?? '', calcR(t) ?? '',
-      t.strategy || '', t.mood || '', (t.tags || []).join(', '), (t.notes || '').replace(/\r?\n/g, ' ')
+      t.high ?? '', t.low ?? '',
+      t.strategy || '', t.mood || '', (t.tags || []).join(', '), (t.notes || '').replace(/\r?\n/g, ' '),
+      rrTheo(t) != null ? +rrTheo(t).toFixed(4) : '', calcR(t) != null ? +calcR(t).toFixed(4) : '', pTxt
     ];
   });
   const csv = '\uFEFF' + [head, ...rows].map(r => r.map(c => {
@@ -2089,7 +2944,9 @@ function importCSV(file) {
         pnlOv: idx('p&l manuel', 'pnl manuel', 'p&l saisi', 'pnl saisi', 'p&l final', 'pnl final', 'pnl override', 'pnloverride'),
         strategy: idx('strategie', 'strategy', 'setup'),
         mood: idx('etadesprit', 'humeur', 'mood'),
-        notes: idx('notes', 'note', 'commentaire')
+        notes: idx('notes', 'note', 'commentaire'),
+        high: idx('plus haut atteint', 'plushaut', 'haut atteint', 'high', 'highest', 'mfe'),
+        low: idx('plus bas atteint', 'plusbas', 'bas atteint', 'low', 'lowest', 'mae')
       };
       if (H.sym < 0 || H.entry < 0) throw 0;
       const guessMarket = s => {
@@ -2134,6 +2991,8 @@ function importCSV(file) {
           exitAt: parseDT(H.exitAt >= 0 ? cells[H.exitAt] : ''),
           fees: (H.fees >= 0 ? parseNum(cells[H.fees]) : 0) || 0,
           pnlOverride: H.pnlOv >= 0 ? parseNum(cells[H.pnlOv]) : null,
+          high: H.high >= 0 ? parseNum(cells[H.high]) : null,
+          low: H.low >= 0 ? parseNum(cells[H.low]) : null,
           strategy: H.strategy >= 0 ? cells[H.strategy] : '',
           mood: H.mood >= 0 ? cells[H.mood] : '',
           notes: H.notes >= 0 ? cells[H.notes] : '',
@@ -2202,6 +3061,22 @@ document.addEventListener('click', e => {
     case 'submit-trade': submitTrade(); break;
     case 'submit-note': submitNote(); break;
     case 'close-drawer': closeDrawers(); break;
+    case 'add-partial': {
+      collectPartials();
+      ui.formPartials.push({ id: uid(), at: toLocalInput(new Date()), price: null, qty: null, fees: null, pnlOv: null });
+      renderPartials(); renderRRBox();
+      const rs = document.querySelectorAll('#tPartials .p-row');
+      const lastP = rs[rs.length - 1];
+      if (lastP) { const f = lastP.querySelector('[data-pf="price"]'); if (f) f.focus(); }
+      break;
+    }
+    case 'del-partial': {
+      collectPartials();
+      ui.formPartials = ui.formPartials.filter(x => x.id !== (b.dataset.pid || id));
+      renderPartials();
+      updateCalc();
+      break;
+    }
     case 'reset-filters':
       ['fSearch','fStrategy','fFrom','fTo'].forEach(i => $(i).value = '');
       $('fDir').value = 'all'; $('fResult').value = 'all'; renderTrades(); break;
@@ -2216,7 +3091,7 @@ document.addEventListener('click', e => {
       break;
     case 'reset':
       confirmDialog('Tout effacer ?', 'Trades, notes et réglages seront définitivement supprimés de ce navigateur.',
-        () => { localStorage.removeItem(KEY); S = { settings: { ...DEFAULTS }, trades: [], notes: [] }; renderAll(); toast('Toutes les données ont été effacées.'); });
+        () => { localStorage.removeItem(KEY); S = { settings: { ...DEFAULTS }, trades: [], notes: [], weekly: {} }; renderAll(); toast('Toutes les données ont été effacées.'); });
       break;
     case 'cloud-save': cloudPush(); break;
     case 'cloud-restore': cloudPull(); break;
@@ -2252,6 +3127,15 @@ document.addEventListener('click', e => {
       }
       break;
     }
+    case 'money-mode':
+      ui.moneyMode = b.dataset.mode;
+      document.querySelectorAll('#moneySeg button').forEach(x => x.classList.toggle('active', x.dataset.mode === ui.moneyMode));
+      renderStats(); break;
+    case 'wk-prev': ui.wkOff--; renderWeekly(); break;
+    case 'wk-next': ui.wkOff = Math.min(0, ui.wkOff + 1); renderWeekly(); break;
+    case 'wk-today': ui.wkOff = 0; renderWeekly(); break;
+    case 'wk-save': saveWeekly(); break;
+    case 'wk-note': weeklyNote(); break;
     case 'confirm-cancel': $('confirmModal').classList.remove('open'); confirmCb = null; break;
   }
 });
@@ -2319,7 +3203,13 @@ document.querySelectorAll('#tradesHead th.sortable').forEach(th => th.addEventLi
 });
  $('importFile').addEventListener('change', e => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ''; });
  $('csvFile').addEventListener('change', e => { if (e.target.files[0]) importCSV(e.target.files[0]); e.target.value = ''; });
- $('tQtyMode').addEventListener('change', () => { updateQtyHint(); updateCalc(); });
+ $('tQtyMode').addEventListener('change', () => {
+  /* Conversion des volumes de partielles selon l'ancien mode d'affichage */
+  collectPartials(ui.pQtyMode);
+  ui.pQtyMode = $('tQtyMode').value;
+  renderPartials();
+  updateQtyHint(); updateCalc();
+});
  $('tTags').addEventListener('click', e => {
   const chip = e.target.closest('.chip');
   if (!chip) return;
