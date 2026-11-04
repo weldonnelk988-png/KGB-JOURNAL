@@ -56,7 +56,14 @@
       "risk": 121,
       "rrTarget": 2.21,
       "rFinal": 2.21,
-      "tags": []
+      "tags": [],
+      "initial": {
+        "entry": 0.81168,
+        "stop": 0.80565,
+        "tp": 0.825,
+        "qty": 19000
+      },
+      "partials": []
     },
     {
       "id": "tmumzg3nnrfwmz",
@@ -80,7 +87,14 @@
       "rFinal": -1,
       "amount": -101.4,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 1.88805,
+        "stop": 1.88435,
+        "tp": 1.9,
+        "qty": 39000
+      },
+      "partials": []
     },
     {
       "id": "tmumzs3e6h8lnd",
@@ -104,7 +118,14 @@
       "rFinal": 0.69,
       "amount": 67.81,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 1.89,
+        "stop": 1.88576,
+        "tp": 1.9,
+        "qty": 33000
+      },
+      "partials": []
     },
     {
       "id": "tmupw3lsnd5f64",
@@ -128,7 +149,14 @@
       "rFinal": 1.53,
       "amount": 96.26,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 0.69704,
+        "stop": 0.69952,
+        "tp": 0.69096,
+        "qty": 44000
+      },
+      "partials": []
     },
     {
       "id": "tmuyhw8sikf8cm",
@@ -152,7 +180,14 @@
       "rFinal": -1,
       "amount": -77.96,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 1.88694,
+        "stop": 1.88078,
+        "tp": 1.91,
+        "qty": 18000
+      },
+      "partials": []
     },
     {
       "id": "tmv06ibm2v5ln1",
@@ -176,7 +211,14 @@
       "rFinal": 1.53,
       "amount": -5.1,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 0.69613,
+        "stop": 0.69775,
+        "tp": 0.69095,
+        "qty": 30000
+      },
+      "partials": []
     },
     {
       "id": "tmvj94le0h4tb7",
@@ -200,7 +242,14 @@
       "rFinal": 0.29,
       "amount": 31.56,
       "tags": [],
-      "qtyMode": "units"
+      "qtyMode": "units",
+      "initial": {
+        "entry": 210.624,
+        "stop": 209.726,
+        "tp": 213,
+        "qty": 18000
+      },
+      "partials": []
     },
     {
       "id": "tmvsos2ob0436m",
@@ -224,8 +273,27 @@
       "rFinal": null,
       "amount": null,
       "tags": [],
-      "qtyMode": "units",
-      "pnlOverride": 138.99
+      "qtyMode": "lots",
+      "pnlOverride": 138.99,
+      "initial": {
+        "entry": 210.285,
+        "stop": 209.55,
+        "tp": 213.113,
+        "qty": 11000
+      },
+      "partials": [
+        {
+          "id": "tmw2k9fkzn7a4t",
+          "at": "2026-11-01T06:45",
+          "price": 211.507,
+          "qty": 5000,
+          "fees": 0,
+          "pnlOv": null
+        }
+      ],
+      "high": 213.764,
+      "low": 209.976,
+      "managed": true
     }
   ],
   "notes": [
@@ -269,5 +337,6 @@
       "body": "J'ai remarqué avec mon trade sur GBPJPY qu'en trading fonda, la patience est un atout. Pendant un mois où j'avais mon idée haussière du GBP, c'est jusqu'à la fin du mois que j'ai pu trouver un setup acheteur sur GBPJPY.",
       "lesson": "Il faut être patient sur ces thèses fondas, laisser le temps à sa thèse de plaire tant que rien ne vient shifter l'idée principale."
     }
-  ]
+  ],
+  "weekly": {}
 }
