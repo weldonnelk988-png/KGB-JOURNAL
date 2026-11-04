@@ -336,7 +336,22 @@
       "title": "La patience est un atout.",
       "body": "J'ai remarqué avec mon trade sur GBPJPY qu'en trading fonda, la patience est un atout. Pendant un mois où j'avais mon idée haussière du GBP, c'est jusqu'à la fin du mois que j'ai pu trouver un setup acheteur sur GBPJPY.",
       "lesson": "Il faut être patient sur ces thèses fondas, laisser le temps à sa thèse de plaire tant que rien ne vient shifter l'idée principale."
+    },
+    {
+      "id": "tmw2l038prcn78",
+      "date": "2026-11-04",
+      "mood": "",
+      "title": "Bilan 2026 — semaine 45",
+      "body": "P&L net : +138,99 $ sur 1 trade(s) clôturé(s) · win rate 100 % · PF Infinity\nMeilleur trade : GBPJPY +138,99 $ (Breakout)\n\nBien fait : J'ai attendu que mon idée fonda me donne des setups clairs et intéressants avant d'exécuter.\nÀ corriger : me précipiter sur les fausses confirmations et exécuter trop tôt\nAjustement : mieux calculer mais prises partielle pour optimiser les profits",
+      "lesson": "mieux calculer mais prises partielle pour optimiser les profits"
     }
   ],
-  "weekly": {}
+  "weekly": {
+    "2026-W45": {
+      "good": "J'ai attendu que mon idée fonda me donne des setups clairs et intéressants avant d'exécuter.",
+      "bad": "me précipiter sur les fausses confirmations et exécuter trop tôt",
+      "adjust": "mieux calculer mais prises partielle pour optimiser les profits",
+      "ts": 1793824845067
+    }
+  }
 }
