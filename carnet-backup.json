@@ -3,7 +3,7 @@
     "capital": 2934.38,
     "symbol": "$",
     "currency": "USD",
-    "dailyLossPct": 1,
+    "dailyLossPct": 3,
     "weeklyLossPct": 2,
     "monthlyTargetPct": 5,
     "maxTradesDay": 2,
