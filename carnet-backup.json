@@ -324,6 +324,36 @@
         "tp": 1.9,
         "qty": 14000.000000000002
       }
+    },
+    {
+      "id": "tmwjgkjyfyu5zd",
+      "sym": "GBPCAD",
+      "market": "Forex",
+      "dir": "long",
+      "qty": 24000,
+      "qtyMode": "lots",
+      "entry": 1.88638,
+      "stop": 1.88292,
+      "tp": 1.9,
+      "exit": null,
+      "high": null,
+      "low": null,
+      "pnlOverride": null,
+      "entryAt": "2026-11-16T17:07",
+      "exitAt": "",
+      "fees": 0,
+      "strategy": "Retournement",
+      "mood": "Discipliné",
+      "notes": "",
+      "tags": [],
+      "partials": [],
+      "managed": false,
+      "initial": {
+        "entry": 1.88638,
+        "stop": 1.88292,
+        "tp": 1.9,
+        "qty": 24000
+      }
     }
   ],
   "notes": [
