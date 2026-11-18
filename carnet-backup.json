@@ -410,6 +410,14 @@
       "title": "Bilan 2026 — semaine 45",
       "body": "P&L net : +138,99 $ sur 1 trade(s) clôturé(s) · win rate 100 % · PF Infinity\nMeilleur trade : GBPJPY +138,99 $ (Breakout)\n\nBien fait : J'ai attendu que mon idée fonda me donne des setups clairs et intéressants avant d'exécuter.\nÀ corriger : me précipiter sur les fausses confirmations et exécuter trop tôt\nAjustement : mieux calculer mais prises partielle pour optimiser les profits",
       "lesson": "mieux calculer mais prises partielle pour optimiser les profits"
+    },
+    {
+      "id": "tmwlxgw9c5d7ds",
+      "date": "2026-11-18",
+      "mood": "",
+      "title": "Bilan 2026 — semaine 47",
+      "body": "P&L net : −66,46 $ sur 2 trade(s) clôturé(s) · win rate 0 % · PF 0.00\nPire trade : GBPCAD −39,88 $ (Retournement)\nErreurs taguées : 2 trade(s) — Déplacement de stop, Stop trop serré\n\nBien fait : J'ai bien fait de déplacer mon stop à 1.88400 sur GBPCAD avant la publication de l'inflation du 18/11/26, ce qui m'a permis de sortir à 66,46% de mon R-Max par trade au lieu d'une perte totale.\nÀ corriger : Ce qui m'a coûté, c'est de ne pas avoir été préparé pour la publication de l'inflation au Royaume-Uni, sans biais clairement défini en analysant le consensus et les sous-données pour construire un biais et me préparer à la sortie en conséquence.\nAjustement : Il faut toujours préparer le rapport  et un biais avant la publication d'une annonce économique, surtout si l'on est déjà en position, et même si l'on ne l'est pas.",
+      "lesson": "Il faut toujours préparer le rapport  et un biais avant la publication d'une annonce économique, surtout si l'on est déjà en position, et même si l'on ne l'est pas."
     }
   ],
   "weekly": {
@@ -418,6 +426,12 @@
       "bad": "me précipiter sur les fausses confirmations et exécuter trop tôt",
       "adjust": "mieux calculer mais prises partielle pour optimiser les profits",
       "ts": 1793824845067
+    },
+    "2026-W47": {
+      "good": "J'ai bien fait de déplacer mon stop à 1.88400 sur GBPCAD avant la publication de l'inflation du 18/11/26, ce qui m'a permis de sortir à 66,46% de mon R-Max par trade au lieu d'une perte totale.",
+      "bad": "Ce qui m'a coûté, c'est de ne pas avoir été préparé pour la publication de l'inflation au Royaume-Uni, sans biais clairement défini en analysant le consensus et les sous-données pour construire un biais et me préparer à la sortie en conséquence.",
+      "adjust": "Il faut toujours préparer le rapport  et un biais avant la publication d'une annonce économique, surtout si l'on est déjà en position, et même si l'on ne l'est pas.",
+      "ts": 1794994644689
     }
   }
 }
