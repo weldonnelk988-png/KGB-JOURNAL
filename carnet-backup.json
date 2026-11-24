@@ -360,6 +360,36 @@
         "tp": 1.9,
         "qty": 24000
       }
+    },
+    {
+      "id": "tmwup4bgiwd73q",
+      "sym": "AUDNZD",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 53000,
+      "qtyMode": "lots",
+      "entry": 1.2161,
+      "stop": 1.21942,
+      "tp": 1.19788,
+      "exit": null,
+      "high": null,
+      "low": null,
+      "pnlOverride": null,
+      "entryAt": "2026-11-24T13:49",
+      "exitAt": "",
+      "fees": 0,
+      "strategy": "Tendance",
+      "mood": "Discipliné",
+      "notes": "",
+      "tags": [],
+      "partials": [],
+      "managed": false,
+      "initial": {
+        "entry": 1.2161,
+        "stop": 1.21942,
+        "tp": 1.19788,
+        "qty": 53000
+      }
     }
   ],
   "notes": [
