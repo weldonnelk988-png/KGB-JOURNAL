@@ -382,8 +382,17 @@
       "mood": "Discipliné",
       "notes": "",
       "tags": [],
-      "partials": [],
-      "managed": false,
+      "partials": [
+        {
+          "id": "tmwuxmycx6hhjp",
+          "at": "2026-11-24T17:52",
+          "price": 1.21969,
+          "qty": 16000,
+          "fees": 0,
+          "pnlOv": 47.42
+        }
+      ],
+      "managed": true,
       "initial": {
         "entry": 1.2161,
         "stop": 1.21942,
