@@ -399,6 +399,36 @@
         "tp": 1.19788,
         "qty": 53000
       }
+    },
+    {
+      "id": "tmwyria9fdjpc9",
+      "sym": "AUD/JPY",
+      "market": "Forex",
+      "dir": "short",
+      "qty": 12000,
+      "qtyMode": "lots",
+      "entry": 105.263,
+      "stop": 106.151,
+      "tp": 102.568,
+      "exit": 106.151,
+      "high": 106.462,
+      "low": 105.385,
+      "pnlOverride": -66.93,
+      "entryAt": "2026-11-25T17:53",
+      "exitAt": "2026-11-27T03:00",
+      "fees": 0,
+      "strategy": "Tendance",
+      "mood": "Neutre",
+      "notes": "",
+      "tags": [],
+      "partials": [],
+      "managed": false,
+      "initial": {
+        "entry": 105.263,
+        "stop": 106.151,
+        "tp": 102.568,
+        "qty": 12000
+      }
     }
   ],
   "notes": [
